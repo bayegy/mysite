@@ -1,0 +1,71 @@
+1552218562406	geckodriver	INFO	geckodriver 0.21.0
+1552218562415	geckodriver	INFO	Listening on 127.0.0.1:53820
+1552218565430	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\bayegy\\AppData\\Local\\Temp\\rust_mozprofile.W28CogCl28Y3"
+*** You are running in headless mode.
+1552218565752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1552218565752	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1552218565839	Marionette	TRACE	Received observer notification profile-after-change
+1552218565875	Marionette	TRACE	Received observer notification toplevel-window-ready
+1552218565900	Marionette	TRACE	Received observer notification command-line-startup
+1552218565900	Marionette	TRACE	Received observer notification nsPref:changed
+1552218565900	Marionette	DEBUG	Init aborted (running=false, enabled=true, finalUIStartup=false)
+1552218565962	Marionette	TRACE	Received observer notification toplevel-window-ready
+1552218566528	Marionette	TRACE	Received observer notification sessionstore-windows-restored
+1552218566528	Marionette	TRACE	Waiting until startup recorder finished recording startup scripts...
+1552218566631	Marionette	TRACE	All scripts recorded.
+1552218566632	Marionette	DEBUG	Setting recommended pref app.update.disabledForTesting to true
+1552218566632	Marionette	DEBUG	Setting recommended pref apz.content_response_timeout to 60000
+1552218566632	Marionette	DEBUG	Setting recommended pref browser.contentblocking.introCount to 99
+1552218566632	Marionette	DEBUG	Setting recommended pref browser.download.panel.shown to true
+1552218566632	Marionette	DEBUG	Setting recommended pref browser.newtabpage.enabled to false
+1552218566633	Marionette	DEBUG	Setting recommended pref browser.pagethumbnails.capturing_disabled to true
+1552218566633	Marionette	DEBUG	Setting recommended pref browser.search.update to false
+1552218566633	Marionette	DEBUG	Setting recommended pref browser.tabs.disableBackgroundZombification to false
+1552218566633	Marionette	DEBUG	Setting recommended pref browser.tabs.warnOnCloseOtherTabs to false
+1552218566633	Marionette	DEBUG	Setting recommended pref browser.tabs.warnOnOpen to false
+1552218566634	Marionette	DEBUG	Setting recommended pref browser.usedOnWindows10.introURL to 
+1552218566634	Marionette	DEBUG	Setting recommended pref browser.urlbar.suggest.searches to false
+1552218566634	Marionette	DEBUG	Setting recommended pref datareporting.policy.dataSubmissionPolicyAccepted to false
+1552218566634	Marionette	DEBUG	Setting recommended pref dom.disable_beforeunload to true
+1552218566634	Marionette	DEBUG	Setting recommended pref dom.disable_open_during_load to false
+1552218566634	Marionette	DEBUG	Setting recommended pref dom.file.createInChild to true
+1552218566634	Marionette	DEBUG	Setting recommended pref dom.max_chrome_script_run_time to 0
+1552218566634	Marionette	DEBUG	Setting recommended pref dom.max_script_run_time to 0
+1552218566635	Marionette	DEBUG	Setting recommended pref extensions.getAddons.cache.enabled to false
+1552218566635	Marionette	DEBUG	Setting recommended pref extensions.webservice.discoverURL to http://%(server)s/dummy/discoveryURL
+1552218566635	Marionette	DEBUG	Setting recommended pref network.http.prompt-temp-redirect to false
+1552218566635	Marionette	DEBUG	Setting recommended pref network.http.speculative-parallel-limit to 0
+1552218566635	Marionette	DEBUG	Setting recommended pref security.fileuri.strict_origin_policy to false
+1552218566635	Marionette	DEBUG	Setting recommended pref security.notification_enable_delay to 0
+1552218566635	Marionette	DEBUG	Setting recommended pref signon.autofillForms to false
+1552218566635	Marionette	DEBUG	Setting recommended pref signon.rememberSignons to false
+1552218566635	Marionette	DEBUG	Setting recommended pref toolkit.cosmeticAnimations.enabled to false
+1552218566665	Marionette	INFO	Listening on port 53830
+1552218566665	Marionette	DEBUG	Remote service is active
+1552218567058	Marionette	DEBUG	Accepted connection 0 from 127.0.0.1:53846
+1552218567062	Marionette	DEBUG	0 -> [0,1,"WebDriver:NewSession",{"acceptInsecureCerts":true,"browserName":"firefox","capabilities":{"desiredCapabilities":{"acceptInsecureCerts":true,"browserName":"firefox"}}}]
+1552218567062	Marionette	WARN	TLS certificate errors will be ignored for this session
+1552218567089	Marionette	TRACE	[6442450945] Frame script loaded
+1552218567090	Marionette	TRACE	[6442450945] Frame script registered
+1552218567092	Marionette	DEBUG	0 <- [1,1,null,{"sessionId":"2edcdbbe-9b75-4179-b4fb-db88b56bff3b","capabilities":{"browserName":"firefox","browserVersion":"65.0. ... alse,"moz:webdriverClick":true,"capabilities":{"desiredCapabilities":{"acceptInsecureCerts":true,"browserName":"firefox"}}}}]
+1552218654441	addons.productaddons	ERROR	Request failed certificate checks: [Exception... "Certificate checks failed. See previous errors for details."  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: resource://gre/modules/CertUtils.jsm :: validateCert :: line 108"  data: no]
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:188:13
+
+1552219077141	addons.productaddons	ERROR	Request failed certificate checks: TypeError: secInfo.succeededCertChain is null
+1552219077172	addons.xpi	ERROR	Failed to download system add-on gmp-gmpopenh264: Error: File C:\Users\bayegy\AppData\Local\Temp\tmpaddon-c8b87a does not contain a valid manifest(resource://gre/modules/addons/XPIInstall.jsm:557:11) JS Stack trace: loadManifest@XPIInstall.jsm:557:11
+1552219082088	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing arch: An unexpected property was found in the WebExtension manifest.
+1552219082088	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing os: An unexpected property was found in the WebExtension manifest.
+1552219082088	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing x-cdm-codecs: An unexpected property was found in the WebExtension manifest.
+1552219082088	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing x-cdm-host-versions: An unexpected property was found in the WebExtension manifest.
+1552219082088	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing x-cdm-interface-versions: An unexpected property was found in the WebExtension manifest.
+1552219082089	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing x-cdm-module-versions: An unexpected property was found in the WebExtension manifest.
+1552219082089	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing x-cdm-persistent-license-support: An unexpected property was found in the WebExtension manifest.
+1552219082091	addons.xpi-utils	WARN	Add-on undefined is not correctly signed.
+1552219082092	addons.xpi-utils	WARN	Add-on undefined is not correctly signed.
+1552219082092	addons.manager	WARN	Failed to update system addons: Error: Rejecting updated system add-on set that either could not be downloaded or contained unusable add-ons.(resource://gre/modules/addons/XPIInstall.jsm:3469:13) JS Stack trace: updateSystemAddons@XPIInstall.jsm:3469:13
