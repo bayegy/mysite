@@ -1,0 +1,222 @@
+ISSN	期刊名	期刊名简写	IF	深大是否订阅该期刊	中科院分区	大类学科	小类学科	更新规律	网址
+0028-0836	NATURE	NATURE	41.577	是	1区	综合性期刊	综合性期刊		https://www.nature.com
+1471-0056	NATURE REVIEWS GENETICS	NAT REV GENET	41.465	是	1区	生物	遗传学		https://www.nature.com/nrg/
+1474-175X	NATURE REVIEWS CANCER	NAT REV CANCER	42.784	是	1区	医学	肿瘤学		https://www.nature.com/nrc/
+1474-1733	NATURE REVIEWS IMMUNOLOGY	NAT REV IMMUNOL	41.982	是	1区	医学	免疫学		https://www.nature.com/nri/
+1078-8956	NATURE MEDICINE	NAT MED	32.621	是	1区	医学	生化与分子生物学		https://www.nature.com/nm/
+1474-1776	NATURE REVIEWS DRUG DISCOVERY	NAT REV DRUG DISCOV	50.167	是	1区	医学	生物工程与应用微生物		https://www.nature.com/nrd/
+1740-1526	NATURE REVIEWS MICROBIOLOGY	NAT REV MICROBIOL	31.851	是	1区	生物	微生物学		http://www.nature.com/nrmicro/index.html
+1471-0072	NATURE REVIEWS MOLECULAR CELL BIOLOGY	NAT REV MOL CELL BIO	35.612	是	1区	生物	细胞生物学		http://www.nature.com/nrm/index.html
+1529-2908	NATURE IMMUNOLOGY	NAT IMMUNOL	21.809	是	1区	医学	免疫学		https://www.nature.com/ni/
+1548-7091	NATURE METHODS	NAT METHODS	26.919	是	1区	生物	生化研究方法		http://www.nature.com/nmeth/index.html
+1061-4036	NATURE GENETICS	NAT GENET	27.125	是	1区	生物	遗传学		http://www.nature.com/ng/index.html
+1759-4774	Nature Reviews Clinical Oncology	NAT REV CLIN ONCOL	24.653	是	1区	医学	肿瘤学		http://www.nature.com/nrclinonc/index.html
+1759-5045	Nature Reviews Gastroenterology & Hepatology	NAT REV GASTRO HEPAT	17.324	否	1区	医学	胃肠肝病学		http://www.nature.com/nrgastro/index.html
+1097-6256	NATURE NEUROSCIENCE	NAT NEUROSCI	19.912	是	1区	医学	神经科学		https://www.nature.com/neuro/
+1759-4790	Nature Reviews Rheumatology	NAT REV RHEUMATOL	15.661	是	1区	医学	风湿病学		https://www.nature.com/nrrheum/
+1759-4758	Nature Reviews Neurology	NAT REV NEUROL	19.819	否	1区	医学	临床神经病学		https://www.nature.com/nrneurol/
+1759-5002	Nature Reviews Cardiology	NAT REV CARDIOL	15.162	否	1区	医学	心脏和心血管系统		https://www.nature.com/nrcardio/
+1759-5061	Nature Reviews Nephrology	NAT REV NEPHROL	14.101	否	1区	医学	泌尿学与肾脏学		https://www.nature.com/nrneph/
+1471-003X	NATURE REVIEWS NEUROSCIENCE	NAT REV NEUROSCI	32.635	是	1区	医学	神经科学		https://www.nature.com/nrn/
+1759-5029	Nature Reviews Endocrinology	NAT REV ENDOCRINOL	20.265	否	1区	医学	内分泌学与代谢		https://www.nature.com/nrendo/
+2056-676X	Nature Reviews Disease Primers	NAT REV DIS PRIMERS	16.071	否	1区	医学	医学：内科		https://www.nature.com/nrdp/
+2055-026X	Nature Plants	NAT PLANTS	11.471	否	1区	生物	植物科学		http://www.nature.com/nplants/
+1754-2189	Nature Protocols	NAT PROTOC	12.423	是	1区	生物	生化研究方法		http://www.nature.com/nprot/index.html
+1465-7392	NATURE CELL BIOLOGY	NAT CELL BIOL	19.064	是	1区	生物	细胞生物学		http://www.nature.com/ncb/index.html
+2058-5276	Nature Microbiology	NAT MICROBIOL	14.174	否	1区	生物	微生物学		https://www.nature.com/nmicrobiol/
+1552-4450	Nature Chemical Biology	NAT CHEM BIOL	13.843	是	1区	生物	生化与分子生物学		http://www.nature.com/nchembio/index.html
+1001-0602	CELL RESEARCH	CELL RES	15.393	是	1区	生物	细胞生物学		http://www.nature.com/cr/index.html
+1545-9993	NATURE STRUCTURAL & MOLECULAR BIOLOGY	NAT STRUCT MOL BIOL	13.333	是	1区	生物	生化与分子生物学		http://www.nature.com/nsmb/index.html
+2041-1723	Nature Communications	NAT COMMUN	12.353	是	2区	综合性期刊	综合性期刊		http://www.nature.com/ncomms/index.html
+1098-3600	GENETICS IN MEDICINE	GENET MED	9.937	否	1区	医学	遗传学		http://www.nature.com/gim/index.html
+1350-9047	Cell Death & Differentiation	CELL DEATH DIFFER	8	是	1区	生物	生化与分子生物学		http://www.nature.com/cdd/index.html
+1759-4812	Nature Reviews Urology	NAT REV UROL	8.089	是	1区	医学	泌尿学与肾脏学		https://www.nature.com/nrurol/
+0887-6924	LEUKEMIA	LEUKEMIA	10.023	否	1区	医学	血液学		http://www.nature.com/leu/index.html
+2095-4700	Bone Research	BONE RES	12.354	是	1区	医学	细胞与组织工程		http://www.nature.com/boneres/
+1359-4184	MOLECULAR PSYCHIATRY	MOL PSYCHIATR	11.64	是	1区	医学	生化与分子生物学		http://www.nature.com/mp/index.html
+2044-5385	Blood Cancer Journal	BLOOD CANCER J	8.125	是	1区	医学	肿瘤学		http://www.nature.com/bcj/index.html
+0002-9270	AMERICAN JOURNAL OF GASTROENTEROLOGY	AM J GASTROENTEROL	10.231	否	1区	医学	胃肠肝病学		http://www.nature.com/ajg/index.html
+1758-678X	Nature Climate Change	NAT CLIM CHANGE	19.181	否	1区	生物	环境科学		http://www.nature.com/nclimate/index.html
+1751-7362	ISME Journal	ISME J	9.52	否	1区	生物	生态学		http://www.nature.com/ismej/index.html
+0092-8674	CELL	CELL	31.398	是	1区	生物	生化与分子生物学		https://www.cell.com/cell/newarticles
+1535-6108	CANCER CELL	CANCER CELL	22.844	是	1区	医学	细胞生物学		https://www.cell.com/cancer-cell/newarticles
+1934-5909	Cell Stem Cell	CELL STEM CELL	23.29	是	1区	生物	细胞与组织工程		https://www.cell.com/cell-stem-cell/newarticles
+1550-4131	Cell Metabolism	CELL METAB	20.565	是	1区	生物	细胞生物学		https://www.cell.com/cell-metabolism/newarticles
+1074-7613	IMMUNITY	IMMUNITY	19.734	是	1区	医学	免疫学		https://www.cell.com/immunity/newarticles
+0962-8924	TRENDS IN CELL BIOLOGY	TRENDS CELL BIOL	18.564	是	1区	生物	细胞生物学		https://www.cell.com/trends/cell-biology/newarticles
+1931-3128	Cell Host & Microbe	CELL HOST MICROBE	17.872	是	1区	生物	微生物学		https://www.cell.com/cell-host-microbe/newarticles
+0968-0004	TRENDS IN BIOCHEMICAL SCIENCES	TRENDS BIOCHEM SCI	15.678	是	1区	生物	生化与分子生物学		https://www.cell.com/trends/biochemical-sciences/newarticles
+1471-4906	TRENDS IN IMMUNOLOGY	TRENDS IMMUNOL	14.188	是	1区	医学	免疫学		https://www.cell.com/trends/immunology/newarticles
+1097-2765	MOLECULAR CELL	MOL CELL	14.248	是	1区	生物	生化与分子生物学		https://www.cell.com/molecular-cell/newarticles
+0896-6273	NEURON	NEURON	14.319	是	1区	医学	神经科学		https://www.cell.com/neuron/newarticles
+0165-6147	TRENDS IN PHARMACOLOGICAL SCIENCES	TRENDS PHARMACOL SCI	12.108	是	1区	医学	药学		https://www.cell.com/tips/newarticles
+0966-842X	TRENDS IN MICROBIOLOGY	TRENDS MICROBIOL	11.776	是	1区	生物	生化与分子生物学		https://www.cell.com/trends/microbiology/newarticles
+0166-2236	TRENDS IN NEUROSCIENCES	TRENDS NEUROSCI	11.439	是	1区	医学	神经科学		https://www.cell.com/trends/neurosciences/newarticles
+1471-4914	TRENDS IN MOLECULAR MEDICINE	TRENDS MOL MED	11.021	是	1区	医学	生化与分子生物学		https://www.cell.com/trends/molecular-medicine/newarticles
+1043-2760	TRENDS IN ENDOCRINOLOGY AND METABOLISM	TRENDS ENDOCRIN MET	10.769	是	1区	医学	内分泌学与代谢		https://www.cell.com/trends/endocrinology-metabolism/newarticles
+0168-9525	TRENDS IN GENETICS	TRENDS GENET	10.556	是	1区	生物	遗传学		https://www.cell.com/trends/genetics/newarticles
+0169-5347	TRENDS IN ECOLOGY & EVOLUTION	TRENDS ECOL EVOL	15.938	是	1区	生物	生态学		https://www.cell.com/trends/ecology-evolution/newarticles
+1534-5807	DEVELOPMENTAL CELL	DEV CELL	9.616	是	1区	生物	细胞生物学		https://www.cell.com/developmental-cell/newarticles
+0960-9822	CURRENT BIOLOGY	CURR BIOL	9.251	是	1区	生物	生化与分子生物学		https://www.cell.com/current-biology/newarticles
+0002-9297	AMERICAN JOURNAL OF HUMAN GENETICS	AM J HUM GENET	8.855	是	1区	生物	遗传学		https://www.cell.com/ajhg/newarticles
+1364-6613	TRENDS IN COGNITIVE SCIENCES	TRENDS COGN SCI	15.557	是	1区	医学	行为科学		https://www.cell.com/trends/cognitive-sciences/newarticles
+2211-1247	Cell Reports	CELL REP	8.032	是	1区	生物	细胞生物学		https://www.cell.com/cell-reports/newarticles
+1360-1385	TRENDS IN PLANT SCIENCE	TRENDS PLANT SCI	12.149	是	1区	生物	植物科学		https://www.cell.com/trends/plant-science/newarticles
+0036-8075	SCIENCE	SCIENCE	41.058	是	1区	综合性期刊	综合性期刊		http://science.sciencemag.org
+1946-6234	Science Translational Medicine	SCI TRANSL MED	16.71	否	1区	生物	细胞生物学		http://stm.sciencemag.org/
+0028-4793	NEW ENGLAND JOURNAL OF MEDICINE	NEW ENGL J MED	79.26	否	1区	医学	医学：内科		https://www.nejm.org/toc/nejm/medical-journal?query=main_nav_lg
+0140-6736	LANCET	LANCET	53.254	是	1区	医学	医学：内科		https://www.thelancet.com/journals/lancet/onlinefirst
+1470-2045	LANCET ONCOLOGY	LANCET ONCOL	36.421	是	1区	医学	肿瘤学		https://www.thelancet.com/journals/lanonc/onlinefirst
+2213-2600	Lancet Respiratory Medicine	LANCET RESP MED	21.466	否	1区	医学	危重病医学		http://www.thelancet.com/journals/lanres/onlinefirst
+2213-8587	Lancet Diabetes & Endocrinology	LANCET DIABETES ENDO	19.313	是	1区	医学	内分泌学与代谢		http://www.thelancet.com/journals/landia/onlinefirst
+1473-3099	LANCET INFECTIOUS DISEASES	LANCET INFECT DIS	25.148	是	1区	医学	传染病学		https://www.thelancet.com/journals/laninf/onlinefirst
+2214-109X	Lancet Global Health	LANCET GLOB HEALTH	18.705	是	1区	医学	公共卫生、环境卫生与职业卫生		http://www.thelancet.com/journals/langlo/latestcontent
+2352-3026	Lancet Haematology	LANCET HAEMATOL	10.698	是	1区	医学	血液学		https://www.thelancet.com/journals/lanhae/onlinefirst
+2215-0374	Lancet Psychiatry	LANCET PSYCHIAT	15.233	是	1区	医学	精神病学		https://www.thelancet.com/journals/lanpsy/onlinefirst
+1474-4422	LANCET NEUROLOGY	LANCET NEUROL	27.144	是	1区	医学	临床神经病学		https://www.thelancet.com/journals/laneur/onlinefirst
+2352-3018	Lancet HIV	LANCET HIV	11.355	否	1区	医学	免疫学		https://www.thelancet.com/journals/lanhiv/onlinefirst
+0098-7484	JAMA-JOURNAL OF THE AMERICAN MEDICAL ASSOCIATION	JAMA-J AM MED ASSOC	47.661	否	1区	医学	医学：内科		https://jamanetwork.com/journals/jama/newonline/2019/3
+2374-2437	JAMA Oncology	JAMA ONCOL	20.871	否	1区	医学	肿瘤学		https://jamanetwork.com/journals/jamaoncology/newonline
+2168-6106	JAMA Internal Medicine	JAMA INTERN MED	19.989	否	1区	医学	医学：内科		https://jamanetwork.com/journals/jamainternalmedicine/newonline
+2168-6068	JAMA Dermatology	JAMA DERMATOL	8.107	否	1区	医学	皮肤病学		https://jamanetwork.com/journals/jamadermatology/newonline
+2168-622X	JAMA Psychiatry	JAMA PSYCHIAT	16.642	否	1区	医学	精神病学		https://jamanetwork.com/journals/jamapsychiatry/newonline
+2380-6583	JAMA Cardiology	JAMA CARDIOL	10.133	否	1区	医学	心脏和心血管系统		https://jamanetwork.com/journals/jamacardiology/newonline
+2168-6254	JAMA Surgery	JAMA SURG	8.498	否	1区	医学	外科		https://jamanetwork.com/journals/jamasurgery/newonline
+2168-6149	JAMA Neurology	JAMA NEUROL	11.46	否	1区	医学	临床神经病学		https://jamanetwork.com/journals/jamaneurology/newonline
+2168-6203	JAMA Pediatrics	JAMA PEDIATR	10.769	否	1区	医学	儿科		https://jamanetwork.com/journals/jamapediatrics/newonline
+0732-183X	JOURNAL OF CLINICAL ONCOLOGY	J CLIN ONCOL	26.36	是	1区	医学	肿瘤学		http://ascopubs.org/toc/jco/0/0
+0893-8512	CLINICAL MICROBIOLOGY REVIEWS	CLIN MICROBIOL REV	20.642	否	1区	医学	微生物学		https://cmr.asm.org/latest
+1552-5260	Alzheimers & Dementia	ALZHEIMERS DEMENT	12.764	是	1区	医学	临床神经病学		https://www.sciencedirect.com/journal/alzheimers-and-dementia/articles-in-press
+0163-7258	PHARMACOLOGY & THERAPEUTICS	PHARMACOL THERAPEUT	10.376	是	1区	医学	药学		https://www.sciencedirect.com/journal/pharmacology-and-therapeutics/articles-in-press
+0169-409X	ADVANCED DRUG DELIVERY REVIEWS	ADV DRUG DELIVER REV	13.66	是	1区	医学	药学		https://www.sciencedirect.com/journal/advanced-drug-delivery-reviews/articles-in-press
+0945-053X	MATRIX BIOLOGY	MATRIX BIOL	8.136	是	1区	生物	生化与分子生物学		https://www.sciencedirect.com/journal/matrix-biology/articles-in-press
+1674-2052	Molecular Plant	MOL PLANT	9.326	是	1区	生物	生化与分子生物学		https://www.sciencedirect.com/journal/molecular-plant/articles-in-press
+1571-0645	Physics of Life Reviews	PHYS LIFE REV	13.783	是	1区	生物	生物学		https://www.sciencedirect.com/journal/physics-of-life-reviews/articles-in-press
+0149-7634	NEUROSCIENCE AND BIOBEHAVIORAL REVIEWS	NEUROSCI BIOBEHAV R	8.037	是	1区	医学	行为科学		https://www.sciencedirect.com/journal/neuroscience-and-biobehavioral-reviews/articles-in-press
+0168-8278	JOURNAL OF HEPATOLOGY	J HEPATOL	15.04	是	1区	医学	胃肠肝病学		https://www.journal-of-hepatology.eu/inpress
+0301-0082	PROGRESS IN NEUROBIOLOGY	PROG NEUROBIOL	14.163	是	1区	医学	神经科学		https://www.sciencedirect.com/journal/progress-in-neurobiology/articles-in-press
+1350-9462	PROGRESS IN RETINAL AND EYE RESEARCH	PROG RETIN EYE RES	11.653	是	1区	医学	眼科学		https://www.sciencedirect.com/journal/progress-in-retinal-and-eye-research/articles-in-press
+0006-3223	BIOLOGICAL PSYCHIATRY	BIOL PSYCHIAT	11.984	是	1区	医学	神经科学		https://www.biologicalpsychiatryjournal.com/inpress
+1087-0792	SLEEP MEDICINE REVIEWS	SLEEP MED REV	10.602	是	1区	医学	临床神经病学		https://www.sciencedirect.com/journal/sleep-medicine-reviews/articles-in-press
+1044-579X	SEMINARS IN CANCER BIOLOGY	SEMIN CANCER BIOL	10.198	是	1区	医学	肿瘤学		https://www.sciencedirect.com/journal/seminars-in-cancer-biology/articles-in-press
+1568-1637	AGEING RESEARCH REVIEWS	AGEING RES REV	8.973	是	1区	医学	细胞生物学		https://www.sciencedirect.com/journal/ageing-research-reviews/articles-in-press
+1568-9972	AUTOIMMUNITY REVIEWS	AUTOIMMUN REV	8.745	是	1区	医学	免疫学		https://www.sciencedirect.com/journal/autoimmunity-reviews/articles-in-press
+0163-7827	PROGRESS IN LIPID RESEARCH	PROG LIPID RES	8.435	是	1区	生物	生化与分子生物学		https://www.sciencedirect.com/journal/progress-in-lipid-research/articles-in-press
+2213-1779	JACC-Heart Failure	JACC-HEART FAIL	8.202	是	1区	医学	心脏和心血管系统		https://www.sciencedirect.com/journal/jacc-heart-failure/articles-in-press
+0304-419X	BIOCHIMICA ET BIOPHYSICA ACTA-REVIEWS ON CANCER	BBA-REV CANCER	8.22	是	1区	医学	生化与分子生物学		https://www.sciencedirect.com/journal/biochimica-et-biophysica-acta-bba-reviews-on-cancer/articles-in-press
+0166-0616	STUDIES IN MYCOLOGY	STUD MYCOL	11.633	是	1区	生物	真菌学		https://www.journals.elsevier.com/studies-in-mycology/recent-articles
+1756-1833	BMJ-British Medical Journal	BMJ-BRIT MED J	23.562	是	1区	医学	医学：内科		https://www.bmj.com/research/research
+0017-5749	GUT	GUT	17.016	是	1区	医学	胃肠肝病学		https://gut.bmj.com/content/early/recent
+0040-6376	THORAX	THORAX	9.655	是	1区	医学	呼吸系统		https://thorax.bmj.com/content/early/recent
+0003-4967	ANNALS OF THE RHEUMATIC DISEASES	ANN RHEUM DIS	12.35	是	1区	医学	风湿病学		https://ard.bmj.com/content/early/recent
+1744-4292	Molecular Systems Biology	MOL SYST BIOL	8.5	是	1区	生物	生化与分子生物学		http://msb.embopress.org/
+0261-4189	EMBO JOURNAL	EMBO J	10.557	是	1区	生物	生化与分子生物学		http://emboj.embopress.org
+1469-221X	EMBO REPORTS	EMBO REP	8.749	是	1区	生物	生化与分子生物学		http://embor.embopress.org
+1549-1676	PLOS MEDICINE	PLOS MED	11.675	是	1区	医学	医学：内科		https://journals.plos.org/plosmedicine/search?sortOrder=DATE_NEWEST_FIRST&filterStartDate=2019-02-01&filterEndDate=2019-03-03&filterJournals=PLoSMedicine&q=
+1545-7885	PLOS BIOLOGY	PLOS BIOL	9.163	是	1区	生物	生化与分子生物学		https://journals.plos.org/plosbiology/search?sortOrder=DATE_NEWEST_FIRST&filterStartDate=2019-02-01&filterEndDate=2019-03-03&filterJournals=PLoSBiology&q=
+1741-7015	BMC Medicine	BMC MED	9.088	是	1区	医学	医学：内科		https://bmcmedicine.biomedcentral.com/articles
+2051-1426	Journal for ImmunoTherapy of Cancer	J IMMUNOTHER CANCER	8.374	是	1区	医学	免疫学		https://jitc.biomedcentral.com/articles
+2049-2618	Microbiome	MICROBIOME	9.133	是	1区	生物	微生物学		https://microbiomejournal.biomedcentral.com/articles
+1474-760X	GENOME BIOLOGY	GENOME BIOL	13.214	是	1区	生物	生物工程与应用微生物		https://genomebiology.biomedcentral.com/articles
+1756-994X	Genome Medicine	GENOME MED	8.898	是	1区	生物	遗传学		https://genomemedicine.biomedcentral.com/articles
+1936-878X	JACC-Cardiovascular Imaging	JACC-CARDIOVASC IMAG	10.247	否	1区	医学	心脏和心血管系统		http://imaging.onlinejacc.org/content/early/recent
+1936-8798	JACC-Cardiovascular Interventions	JACC-CARDIOVASC INTE	9.881	否	1区	医学	心脏和心血管系统		http://interventions.onlinejacc.org/content/early/recent
+0735-1097	JOURNAL OF THE AMERICAN COLLEGE OF CARDIOLOGY	J AM COLL CARDIOL	16.834	否	1区	医学	心脏和心血管系统		http://www.onlinejacc.org/content/early/recent
+0027-8424	PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES OF THE UNITED STATES OF AMERICA	P NATL ACAD SCI USA	9.504	是	2区	综合性期刊	综合性期刊		https://www.pnas.org/content/early/recent
+1040-4651	PLANT CELL	PLANT CELL	8.228	是	1区	生物	生化与分子生物学		http://www.plantcell.org/content/early/recent
+0028-3878	NEUROLOGY	NEUROLOGY	8.055	否	1区	医学	临床神经病学		http://www.neurology.org/
+0302-2838	EUROPEAN UROLOGY	EUR UROL	17.581	是	1区	医学	泌尿学与肾脏学		https://www.europeanurology.com/inpress
+1556-0864	Journal of Thoracic Oncology	J THORAC ONCOL	10.34	否	1区	医学	肿瘤学		https://www.jto.org/inpress
+1092-2172	MICROBIOLOGY AND MOLECULAR BIOLOGY REVIEWS	MICROBIOL MOL BIOL R	13.439	否	1区	生物	微生物学		https://mmbr.asm.org/latest
+0149-5992	DIABETES CARE	DIABETES CARE	13.397	否	1区	医学	内分泌学与代谢		http://care.diabetesjournals.org/content/early/recent
+0390-6078	HAEMATOLOGICA	HAEMATOLOGICA	9.09	是	1区	医学	血液学		http://www.haematologica.org/content/early/recent
+0008-5472	CANCER RESEARCH	CANCER RES	9.13	否	1区	医学	肿瘤学		http://cancerres.aacrjournals.org/content/early/recent?utm_source=early&utm_medium=dropdown&utm_campaign=menu
+0163-769X	ENDOCRINE REVIEWS	ENDOCR REV	15.545	是	1区	医学	内分泌学与代谢		https://academic.oup.com/edrv/advance-articles
+0016-5085	GASTROENTEROLOGY	GASTROENTEROLOGY	20.773	是	1区	医学	胃肠肝病学		https://www.gastrojournal.org/inpress
+0007-9235	CA-A CANCER JOURNAL FOR CLINICIANS	CA-CANCER J CLIN	244.585	是	1区	医学	肿瘤学		http://onlinelibrary.wiley.com/journal/10.3322/(ISSN)1542-4863
+0105-2896	IMMUNOLOGICAL REVIEWS	IMMUNOL REV	9.217	是	1区	医学	免疫学		http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1600-065X
+1757-4676	EMBO Molecular Medicine	EMBO MOL MED	10.293	是	1区	医学	医学：研究与实验		http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1757-4684
+0742-3098	JOURNAL OF PINEAL RESEARCH	J PINEAL RES	11.613	是	1区	医学	内分泌学与代谢		http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1600-079X
+0198-6325	MEDICINAL RESEARCH REVIEWS	MED RES REV	8.29	是	1区	医学	药物化学		http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1098-1128
+1388-9842	EUROPEAN JOURNAL OF HEART FAILURE	EUR J HEART FAIL	10.683	是	1区	医学	心脏和心血管系统		https://onlinelibrary.wiley.com/toc/18790844/0/0
+1464-7931	BIOLOGICAL REVIEWS	BIOL REV	11.7	是	1区	生物	生物学		http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1469-185X
+0168-6445	FEMS MICROBIOLOGY REVIEWS	FEMS MICROBIOL REV	11.392	是	1区	生物	微生物学		https://academic.oup.com/femsre/advance-articles
+1759-0876	Wiley Interdisciplinary Reviews-Computational Molecular Science	WIRES COMPUT MOL SCI	8.836	是	1区	生物	化学综合		http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1759-0884
+1461-023X	ECOLOGY LETTERS	ECOL LETT	9.137	是	1区	生物	生态学		https://onlinelibrary.wiley.com/toc/14610248/0/0
+1354-1013	GLOBAL CHANGE BIOLOGY	GLOBAL CHANGE BIOL	8.997	是	1区	生物	生物多样性保护		https://onlinelibrary.wiley.com/toc/13652486/0/0
+0270-9139	HEPATOLOGY	HEPATOLOGY	14.079	是	1区	医学	胃肠肝病学		https://aasldpubs.onlinelibrary.wiley.com/toc/15273350/0/0
+1467-7881	Obesity Reviews	OBES REV	8.483	是	1区	医学	内分泌学与代谢		https://onlinelibrary.wiley.com/toc/1467789x/0/0
+0885-3185	MOVEMENT DISORDERS	MOVEMENT DISORD	8.324	是	1区	医学	临床神经病学		https://onlinelibrary.wiley.com/toc/15318257/0/0
+0364-5134	ANNALS OF NEUROLOGY	ANN NEUROL	10.25	是	1区	医学	临床神经病学		https://onlinelibrary.wiley.com/toc/15318249/0/0
+0195-668X	EUROPEAN HEART JOURNAL	EUR HEART J	23.425	是	1区	医学	心脏和心血管系统		https://academic.oup.com/eurheartj/advance-articles
+0006-8950	BRAIN	BRAIN	10.848	是	1区	医学	临床神经病学		https://academic.oup.com/brain/advance-articles
+1522-8517	NEURO-ONCOLOGY	NEURO-ONCOLOGY	9.384	是	1区	医学	临床神经病学		https://academic.oup.com/neuro-oncology/advance-articles
+0923-7534	ANNALS OF ONCOLOGY	ANN ONCOL	13.93	是	1区	医学	肿瘤学		https://academic.oup.com/annonc/advance-articles
+1355-4786	HUMAN REPRODUCTION UPDATE	HUM REPROD UPDATE	11.852	是	1区	医学	妇产科学		https://academic.oup.com/humupd/advance-articles
+1058-4838	CLINICAL INFECTIOUS DISEASES	CLIN INFECT DIS	9.117	是	1区	医学	免疫学		https://academic.oup.com/cid/advance-articles
+0300-5771	INTERNATIONAL JOURNAL OF EPIDEMIOLOGY	INT J EPIDEMIOL	8.36	是	1区	医学	公共卫生、环境卫生与职业卫生		https://academic.oup.com/ije/advance-articles
+0027-8874	JNCI-Journal of the National Cancer Institute	JNCI-J NATL CANCER I	11.238	是	1区	医学	肿瘤学		https://academic.oup.com/jnci/advance-articles
+1063-5157	SYSTEMATIC BIOLOGY	SYST BIOL	8.523	是	1区	生物	进化生物学		https://academic.oup.com/sysbio/advance-articles
+0305-1048	NUCLEIC ACIDS RESEARCH	NUCLEIC ACIDS RES	11.561	是	1区	生物	生化与分子生物学		https://academic.oup.com/nar/advance-articles
+0737-4038	MOLECULAR BIOLOGY AND EVOLUTION	MOL BIOL EVOL	10.217	是	1区	生物	生化与分子生物学		https://academic.oup.com/mbe/advance-articles
+2095-5138	National Science Review	NATL SCI REV	9.408	是	2区	综合性期刊	综合性期刊		https://academic.oup.com/nsr/advance-articles
+2190-6009	Journal of Cachexia Sarcopenia and Muscle	J CACHEXIA SARCOPENI	12.511	是	1区	医学	老年医学		http://www.cachexia.info/new/online-first-article
+1868-4483	Translational Stroke Research	TRANSL STROKE RES	8.266	否	1区	医学	临床神经病学		https://link.springer.com/journal/12975/onlineFirst/page/1
+0001-6322	ACTA NEUROPATHOLOGICA	ACTA NEUROPATHOL	15.876	否	1区	医学	临床神经病学		https://link.springer.com/search?facet-content-type=Article&facet-journal-id=401&sortOrder=newestFirst
+2405-4712	Cell Systems	CELL SYST	8.982	是	1区	生物	生化与分子生物学		https://www.sciencedirect.com/journal/cell-systems
+0006-4971	BLOOD	BLOOD	15.132	否	1区	医学	血液学		http://www.bloodjournal.org/content/early/recent
+1838-7640	Theranostics	THERANOSTICS	8.537	是	1区	医学	医学：研究与实验		http://www.thno.org/toc/acceptms
+0009-9147	CLINICAL CHEMISTRY	CLIN CHEM	8.636	是	1区	医学	医学实验技术		http://clinchem.aaccjnls.org/content/early/recent
+0009-7330	CIRCULATION RESEARCH	CIRC RES	15.211	否	1区	医学	心脏和心血管系统		https://www.ahajournals.org/toc/res/0/0
+0305-7372	CANCER TREATMENT REVIEWS	CANCER TREAT REV	8.122	是	1区	医学	肿瘤学		https://www.cancertreatmentreviews.com/inpress
+1078-0432	CLINICAL CANCER RESEARCH	CLIN CANCER RES	10.199	否	1区	医学	肿瘤学		http://clincancerres.aacrjournals.org/content/early/recent?utm_source=early&utm_medium=dropdown&utm_campaign=menu
+2326-6066	Cancer Immunology Research	CANCER IMMUNOL RES	9.188	是	1区	医学	免疫学		http://cancerimmunolres.aacrjournals.org/content/early/recent?utm_source=early&utm_medium=dropdown&utm_campaign=menu
+0003-4819	ANNALS OF INTERNAL MEDICINE	ANN INTERN MED	19.384	否	1区	医学	医学：内科		https://annals.org/aim/latest
+0903-1936	EUROPEAN RESPIRATORY JOURNAL	EUR RESPIR J	12.244	否	1区	医学	呼吸系统		https://erj.ersjournals.com/content/early/recent
+0022-1007	JOURNAL OF EXPERIMENTAL MEDICINE	J EXP MED	10.79	是	1区	医学	免疫学		http://jem.rupress.org/newest
+0021-9738	JOURNAL OF CLINICAL INVESTIGATION	J CLIN INVEST	13.251	是	1区	医学	医学：研究与实验		http://www.jci.org/
+0091-6749	JOURNAL OF ALLERGY AND CLINICAL IMMUNOLOGY	J ALLERGY CLIN IMMUN	13.258	是	1区	医学	过敏		https://www.jacionline.org/inpress
+1046-6673	JOURNAL OF THE AMERICAN SOCIETY OF NEPHROLOGY	J AM SOC NEPHROL	8.655	否	1区	医学	泌尿学与肾脏学		https://jasn.asnjournals.org/content/early/recent
+1073-449X	AMERICAN JOURNAL OF RESPIRATORY AND CRITICAL CARE MEDICINE	AM J RESP CRIT CARE	15.239	否	1区	医学	危重病医学		https://www.atsjournals.org/toc/ajrcmb/0/ja
+0021-9525	JOURNAL OF CELL BIOLOGY	J CELL BIOL	8.784	是	1区	生物	细胞生物学		http://jcb.rupress.org/newest
+1554-8627	Autophagy	AUTOPHAGY	11.1	是	1区	生物	细胞生物学		https://www.tandfonline.com/action/showAxaArticles?journalCode=kaup20
+1088-9051	GENOME RESEARCH	GENOME RES	10.101	是	1区	生物	生化与分子生物学		https://genome.cshlp.org/content/early/recent
+0890-9369	GENES & DEVELOPMENT	GENE DEV	9.462	是	1区	生物	细胞生物学		http://genesdev.cshlp.org/content/early/recent
+0091-6765	ENVIRONMENTAL HEALTH PERSPECTIVES	ENVIRON HEALTH PERSP	8.44	是	1区	生物	环境科学		https://ehp.niehs.nih.gov
+1540-9295	FRONTIERS IN ECOLOGY AND THE ENVIRONMENT	FRONT ECOL ENVIRON	8.302	是	1区	生物	生态学		https://esajournals.onlinelibrary.wiley.com/toc/15409309/0/0
+0265-0568	NATURAL PRODUCT REPORTS	NAT PROD REP	11.406		1区	化学	生化与分子生物学		https://pubs.rsc.org/en/journals/journalissues/np#!recentarticles&adv
+0009-7322	CIRCULATION	CIRCULATION	18.881		1区	医学	心脏和心血管系统		https://www.ahajournals.org/toc/circ/0/0
+0031-9333	PHYSIOLOGICAL REVIEWS	PHYSIOL REV	24.014	否	1区	医学	生理学		https://www.physiology.org/toc/physrev/99/2
+0003-4932	ANNALS OF SURGERY	ANN SURG	9.203		1区	医学	外科		http://journals.lww.com/annalsofsurgery/pages/default.aspx
+0085-2538	KIDNEY INTERNATIONAL	KIDNEY INT	8.429		1区	医学	泌尿学与肾脏学		https://www.kidney-international.org
+0342-4642	INTENSIVE CARE MEDICINE	INTENS CARE MED	15.008		1区	医学	危重病医学		http://icmjournal.esicm.org/journals/online_first.html
+0031-6997	PHARMACOLOGICAL REVIEWS	PHARMACOL REV	18.964		1区	医学	药学		http://pharmrev.aspetjournals.org/content/latest
+0002-953X	AMERICAN JOURNAL OF PSYCHIATRY	AM J PSYCHIAT	13.396		1区	医学	精神病学		http://ajp.psychiatryonline.org/
+0149-2195	MMWR-MORBIDITY AND MORTALITY WEEKLY REPORT	MMWR-MORBID MORTAL W	12.888		1区	医学	公共卫生、环境卫生与职业卫生		http://www.cdc.gov/mmwr/index.html
+0033-3190	PSYCHOTHERAPY AND PSYCHOSOMATICS	PSYCHOTHER PSYCHOSOM	13.122		1区	医学	精神病学		http://www.karger.com/Journal/Home/223864
+1943-0264	Cold Spring Harbor Perspectives in Biology	CSH PERSPECT BIOL	9.247		1区	生物	细胞生物学		http://cshperspectives.cshlp.org/
+0031-5850	PERSOONIA	PERSOONIA	8.182		1区	生物	真菌学		https://www.ingentaconnect.com/content/nhn/pimj
+0033-2909	PSYCHOLOGICAL BULLETIN	PSYCHOL BULL	13.25		1区	医学	心理学		http://www.apa.org/pubs/journals/bul/index.aspx
+0140-525X	BEHAVIORAL AND BRAIN SCIENCES	BEHAV BRAIN SCI	15.071		1区	医学	行为科学		https://www.cambridge.org/core/journals/behavioral-and-brain-sciences
+1560-2745	FUNGAL DIVERSITY	FUNGAL DIVERS	14.078		1区	生物	真菌学		https://link.springer.com/search?facet-content-type=Article&facet-journal-id=13225&sortOrder=newestFirst
+0066-4154	Annual Review of Biochemistry	ANNU REV BIOCHEM	20.154		1区	生物	生化与分子生物学		http://www.annualreviews.org/journal/biochem
+0732-0582	Annual Review of Immunology	ANNU REV IMMUNOL	22.714		1区	医学	免疫学		http://www.annualreviews.org/loi/immunol
+0362-1642	Annual Review of Pharmacology and Toxicology	ANNU REV PHARMACOL	13.295		1区	医学	药学		http://www.annualreviews.org/journal/pharmtox
+0066-4197	Annual Review of Genetics	ANNU REV GENET	9.589		1区	生物	遗传学		http://www.annualreviews.org/journal/genet
+1936-122X	Annual Review of Biophysics	ANNU REV BIOPHYS	11.742		1区	生物	生物物理		http://www.annualreviews.org/journal/biophys
+0066-4170	Annual Review of Entomology	ANNU REV ENTOMOL	13.86		1区	生物	昆虫学		http://www.annualreviews.org/journal/ento
+0066-4227	Annual Review of Microbiology	ANNU REV MICROBIOL	9.808		1区	生物	微生物学		http://www.annualreviews.org/journal/micro
+1543-5008	Annual Review of Plant Biology	ANNU REV PLANT BIOL	18.712		1区	生物	植物科学		http://www.annualreviews.org/journal/arplant
+1081-0706	Annual Review of Cell and Developmental Biology	ANNU REV CELL DEV BI	9.032		1区	生物	细胞生物学		http://www.annualreviews.org/journal/cellbio
+1543-592X	Annual Review of Ecology Evolution and Systematics	ANNU REV ECOL EVOL S	10.16		1区	生物	生态学		http://www.annualreviews.org/journal/ecolsys
+0066-4308	Annual Review of Psychology	ANNU REV PSYCHOL	22.774		1区	医学	心理学		http://www.annualreviews.org/journal/psych
+1548-5943	Annual Review of Clinical Psychology	ANNU REV CLIN PSYCHO	13.278		1区	医学	心理学		http://www.annualreviews.org/loi/clinpsy
+0066-4286	Annual Review of Phytopathology	ANNU REV PHYTOPATHOL	9.528		1区	农林科学	植物科学		http://www.annualreviews.org/journal/phyto
+1553-4006	Annual Review of Pathology-Mechanisms of Disease	ANNU REV PATHOL-MECH	15.952		1区	医学	病理学		http://www.annualreviews.org/loi/pathmechdis
+0163-7525	Annual Review of Public Health	ANNU REV PUBL HEALTH	9.491		1区	医学	公共卫生、环境卫生与职业卫生		http://www.annualreviews.org/journal/publhealth
+0066-4219	Annual Review of Medicine	ANNU REV MED	14.97		1区	医学	医学：研究与实验		http://www.annualreviews.org/journal/med
+0199-9885	Annual Review of Nutrition	ANNU REV NUTR	8.886		1区	医学	营养学		http://www.annualreviews.org/journal/nutr
+0066-4278	Annual Review of Physiology	ANNU REV PHYSIOL	14.327		1区	医学	生理学		http://www.annualreviews.org/journal/physiol
+0147-006X	Annual Review of Neuroscience	ANNU REV NEUROSCI	14.675		1区	医学	神经科学		http://www.annualreviews.org/journal/neuro
+1368-7646	DRUG RESISTANCE UPDATES	DRUG RESIST UPDATE	11.63		1区	医学	药学		https://www.journals.elsevier.com/drug-resistance-updates/recent-articles
+0955-0674	CURRENT OPINION IN CELL BIOLOGY	CURR OPIN CELL BIOL	10.015		1区	生物	细胞生物学		https://www.journals.elsevier.com/current-opinion-in-cell-biology/recent-articles
