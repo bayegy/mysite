@@ -14,8 +14,8 @@ class Mysql(object):
     def __insert_sql__(self, table_name, field_name_list, value_list) -> str:
         lt = len(field_name_list)
         sqlhead = "insert into {} (".format(table_name)
-        sqlbody = ','.join(['%s'] * lt)
-        sqlbody = (sqlbody + ') values (' + sqlbody + ')') % tuple(field_name_list + value_list)
+        sqlbody = ','.join(["`%s`"] * lt)  # using `` here to prohibit field name like if to cause error
+        sqlbody = (sqlbody + ") values %s;") % tuple(field_name_list + [value_list])
         return sqlhead + sqlbody
 
     def commit(self, sql=None):
@@ -33,7 +33,7 @@ class Mysql(object):
     def get_field_name(self, table_name) -> []:
         sql = "select COLUMN_NAME from information_schema.COLUMNS where table_name = '{}'".format(table_name)
         self.commit(sql)
-        return [tp[0] for tp in self.fetchall()]
+        return [tp[0] for tp in self.fetchall()].remove('索引')
 
     def create_table(self, table_name, field_name_list, type_list, primary_key=None):
         sqlhead = "CREATE TABLE IF NOT EXISTS `{}`(".format(table_name)
@@ -46,8 +46,16 @@ class Mysql(object):
         sql = sqlhead + sqlbody + sqltail
         self.commit(sql)
 
-    def str_list(self, list_object) -> []:
-        return [str(i) for i in list_object]
+    def str_list(self, list_object) -> str:
+        jg = [False] * len(list_object)
+        for m, n in enumerate(list_object):
+            try:                       # np.isnan can not be used in any other types except float and int
+                jg[m] = np.isnan(n)
+            except Exception:
+                pass
+        list_object = ["null" if any((i == ' ', jg[j], not(i or i == 0)))
+                       else i for j, i in enumerate(list_object)]
+        return str(list_object).replace('[', '(').replace(']', ')').replace("' '", "','").replace("'null'", "null")
 
     def table_exists(self, table_name) -> bool:
         """check if the mysql table exists"""
@@ -67,27 +75,28 @@ class Mysql(object):
         elif nptype == np.dtype('float64'):
             return 'DOUBLE'
         else:
-            return 'VARCHAR(100)'
+            return 'VARCHAR(1000)'
 
-    def insert(self, table_name, records):
+    def insert(self, table_name, records, field_name_list=None):
         records = np.array(records)
-        field_name_list = self.get_field_name(table_name)
+        field_name_list = field_name_list if field_name_list else self.get_field_name(table_name)
         try:
             records.shape[1]
             for value_list in records:
-                self.cursor.execute(self.__insert_sql__(table_name, field_name_list,
-                                                        self.str_list(value_list)))
+                sql = self.__insert_sql__(table_name, field_name_list, self.str_list(value_list))
+                # print(sql)
+                self.cursor.execute(sql)
             self.commit()
         except Exception:
             self.commit(self.__insert_sql__(table_name, field_name_list, self.str_list(records)))
 
-    def read_csv(self, path, table_name, sep, primary_key=None):
+    def read_csv(self, path, table_name, sep="\t", primary_key=None):
         df = pd.read_csv(path, sep=sep)
         field_name_list = list(df.columns)
         if not self.table_exists(table_name):
             type_list = [self.nptype_to_sqltype(dt) for dt in list(df.dtypes.values)]
             self.create_table(table_name, field_name_list, type_list, primary_key)
-        self.insert(table_name, df.values)
+        self.insert(table_name, df.values, field_name_list)
 
     def select(self, table_name, field="*", condition=None) -> pd.DataFrame:
         field = [field] if isinstance(field, str) else field
