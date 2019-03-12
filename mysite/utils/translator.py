@@ -22,6 +22,7 @@ class Translator(object):
         except Exception:
             chinese = tree.xpath("//p[@class='wordGroup']/text()")
 
-        out = chinese if isinstance(chinese, str) else '//'.join([w.strip() for w in chinese]).strip('/')
+        out = chinese if isinstance(chinese, str) else '//'.join([w.strip()
+                                                                  for w in chinese]).strip('/').replace("\n", "").replace(" ", "")
 
         return re.sub('/+', '//', out)
