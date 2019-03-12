@@ -69,3 +69,7 @@ console.error: BroadcastService:
 1552219082091	addons.xpi-utils	WARN	Add-on undefined is not correctly signed.
 1552219082092	addons.xpi-utils	WARN	Add-on undefined is not correctly signed.
 1552219082092	addons.manager	WARN	Failed to update system addons: Error: Rejecting updated system add-on set that either could not be downloaded or contained unusable add-ons.(resource://gre/modules/addons/XPIInstall.jsm:3469:13) JS Stack trace: updateSystemAddons@XPIInstall.jsm:3469:13
+1552222813771	Marionette	DEBUG	Closed connection 0
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

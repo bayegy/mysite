@@ -12,11 +12,8 @@ class Mysql(object):
         self.cursor = self._db.cursor()
 
     def __insert_sql__(self, table_name, field_name_list, value_list) -> str:
-        lt = len(field_name_list)
-        sqlhead = "insert into {} (".format(table_name)
-        sqlbody = ','.join(["`%s`"] * lt)  # using `` here to prohibit field name like if to cause error
-        sqlbody = (sqlbody + ") values %s;") % tuple(field_name_list + [value_list])
-        return sqlhead + sqlbody
+        value_list = [i if (i or i==0) else np.nan for i in value_list]
+        return "insert into `{}` {} values {};".format(table_name, str(tuple(field_name_list)).replace("'","`"), str(tuple(value_list)).replace("nan", "null"))
 
     def commit(self, sql=None):
         try:
@@ -46,17 +43,6 @@ class Mysql(object):
         sql = sqlhead + sqlbody + sqltail
         self.commit(sql)
 
-    def str_list(self, list_object) -> str:
-        jg = [False] * len(list_object)
-        for m, n in enumerate(list_object):
-            try:                       # np.isnan can not be used in any other types except float and int
-                jg[m] = np.isnan(n)
-            except Exception:
-                pass
-        list_object = ["null" if any((i == ' ', jg[j], not(i or i == 0)))
-                       else i for j, i in enumerate(list_object)]
-        return str(list_object).replace('[', '(').replace(']', ')').replace("' '", "','").replace("'null'", "null")
-
     def table_exists(self, table_name) -> bool:
         """check if the mysql table exists"""
         sql = "show tables;"
@@ -78,17 +64,16 @@ class Mysql(object):
             return 'VARCHAR(1000)'
 
     def insert(self, table_name, records, field_name_list=None):
-        records = np.array(records)
+        shape_jg = np.array(records)
         field_name_list = field_name_list if field_name_list else self.get_field_name(table_name)
         try:
-            records.shape[1]
+            shape_jg.shape[1]
             for value_list in records:
-                sql = self.__insert_sql__(table_name, field_name_list, self.str_list(value_list))
-                # print(sql)
+                sql = self.__insert_sql__(table_name, field_name_list, value_list)
                 self.cursor.execute(sql)
             self.commit()
         except Exception:
-            self.commit(self.__insert_sql__(table_name, field_name_list, self.str_list(records)))
+            self.commit(self.__insert_sql__(table_name, field_name_list, records))
 
     def read_csv(self, path, table_name, sep="\t", primary_key=None):
         df = pd.read_csv(path, sep=sep)
@@ -99,6 +84,7 @@ class Mysql(object):
         self.insert(table_name, df.values, field_name_list)
 
     def select(self, table_name, field="*", condition=None) -> pd.DataFrame:
+        """Remember to use `` when encounter some special field name. e.g. `IF` """
         field = [field] if isinstance(field, str) else field
         field = ','.join(['%s'] * len(field)) % tuple(field)
         condition = "where " + condition if condition else ""
