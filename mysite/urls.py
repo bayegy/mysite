@@ -19,6 +19,6 @@ from . import view
 from . import search
 from django.conf.urls import url
 urlpatterns = [
-    url(r'^$', search.search_form),
+    url(r'^$', search.main),
     url(r'^search$', search.search),
 ]

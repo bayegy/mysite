@@ -10,10 +10,12 @@ class Mysql(object):
     def __init__(self, host, user, passwd, db):
         self._db = pymysql.connect(host, user, passwd, db)
         self.cursor = self._db.cursor()
+        self.pd = pd
+        self.pd.set_option('max_colwidth', 1000)
 
     def __insert_sql__(self, table_name, field_name_list, value_list) -> str:
-        value_list = [i if (i or i==0) else np.nan for i in value_list]
-        return "insert into `{}` {} values {};".format(table_name, str(tuple(field_name_list)).replace("'","`"), str(tuple(value_list)).replace("nan", "null"))
+        value_list = [i if (i or i == 0) else np.nan for i in value_list]
+        return "insert into `{}` {} values {};".format(table_name, str(tuple(field_name_list)).replace("'", "`"), str(tuple(value_list)).replace("nan", "null"))
 
     def commit(self, sql=None):
         try:
@@ -76,7 +78,7 @@ class Mysql(object):
             self.commit(self.__insert_sql__(table_name, field_name_list, records))
 
     def read_csv(self, path, table_name, sep="\t", primary_key=None):
-        df = pd.read_csv(path, sep=sep)
+        df = self.pd.read_csv(path, sep=sep)
         field_name_list = list(df.columns)
         if not self.table_exists(table_name):
             type_list = [self.nptype_to_sqltype(dt) for dt in list(df.dtypes.values)]
@@ -92,7 +94,7 @@ class Mysql(object):
         self.cursor.execute(sql)
         dt = self.cursor.fetchall()
         columns = [tp[0] for tp in self.cursor.description]
-        return pd.DataFrame(np.array(dt), columns=columns)
+        return self.pd.DataFrame(np.array(dt), columns=columns)
 
     def close(self):
         self._db.close()

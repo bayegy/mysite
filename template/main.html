@@ -1,29 +1,44 @@
-<!doctype=html>
+<!DOCTYPE html>
 <head>
+    <meta charset="utf-8">
     <style type="text/css">
-    p{
-    color: red
-}
-    .class1{
-    color: blue
-}
+    .title{
+        color: deepskyblue;
+        font-size: 45px;
+        font-family: 'STXingkai';
+    }
     img{
-    width: 800px;
-    height: auto;
-}
+        width: 100px;
+        height: auto;
+    }
+    .sector{
+        margin-top: 200px;
+        margin-left: 200px;
+    }
+    #in1{
+        height: 50px;
+        width: 600px;
+        font-size: 25px;
+    }
+    #in2{
+        border:none;
+        cursor:pointer;
+        height: 55px;
+        width: 100px;
+        font-size: 30px;
+        background: aquamarine;
+    }
+
     </style>
 </head>
 <body>
-    <h1>{{var1}}</h1>
-    <p id="id1">my first line</p>
-    <p class="class1">my second line</p>
+    <div class="sector">
+    <div style="position:relative"><img src="../static/logo.jpg" /><span class="title" style="position:absolute; left:300; top:10px;">微生太文献查新系统</span></div>
     <form action="/search" method="get">
-        <input type="text" name="q">
-        <input type="submit" value="搜索">
+        <input id="in1" type="text" name="q">
+        <input id="in2" type="submit" value="搜索">
     </form>
-
-    <img src="../static/timg.jpeg"><img>
-    <script type="text/javascript">
-        document.getElementById('id1').innerHTML="What a beautiful day, wohaha"
-    </script>
+    <br>
+    <p style="font-size: 18px;font-family: 'KaiTi';">&ensp;&rarr;&ensp;请输入要查询的日期，如日期"2019-3-1"，或范围"2019-3-1:2019-3-5"</p>
+    </div>
 </body>

@@ -10,8 +10,9 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os
 import sys
 
-#sys.path.append("/home/admin1/miniconda3/bin")
+# sys.path.append("/home/admin1/miniconda3/bin")
 sys.path.append("/home/admin1/miniconda3/envs/qm2/lib/python3.5/site-packages")
+# sys.path.append("./utils")
 
 from django.core.wsgi import get_wsgi_application
 

@@ -1,22 +1,25 @@
 
 # -*- coding: utf-8 -*-
 
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.shortcuts import render_to_response
-
+from django.shortcuts import render
+from . import mysql
 # 表单
 
 
-def search_form(request):
+def main(request):
     return render_to_response('main.html')
 
 # 接收请求数据
 
 
 def search(request):
+    db = mysql.Mysql("localhost", "root", "947366", "wstdb_academic")
     request.encoding = 'utf-8'
-    if 'q' in request.GET:
-        message = '你搜索的内容为: ' + request.GET['q']
-    else:
-        message = '你提交了空表单'
-    return HttpResponse(message)
+    input_word = request.GET['q'].strip()
+    df = db.select("tb_papers", condition="发表日期='{}'".format(input_word))
+    del df["索引"]
+    context = {}
+    context['table1'] = df.to_html()
+    return render_to_response('search-result.html', context)
