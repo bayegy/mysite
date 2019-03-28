@@ -8,8 +8,10 @@ class Nature(Journal):
 
     def get_papers_url(self):
         tree = self.net.requests(self.url, method="get")
-        ids = tree.xpath('//a[@itemprop="url"]/@href')
-        return ['https://www.nature.com' + i for i in ids if i.startswith('/articles')]
+        ids = tree.xpath('//a/@href')
+        a = ['https://www.nature.com' + i for i in ids if i.startswith('/articles')]
+        b = [i for i in ids if i.startswith('https://www.nature.com/articles')]
+        return a + b
 
     def get_paper_info(self, paper_url: str):
         tree = self.net.requests(paper_url, method="get")
@@ -46,7 +48,7 @@ class Nature(Journal):
             ca = li.xpath('span/a[@class="icon icon-right-top icon-mail-12x9-blue pr15"]/text()')
             if ca:
                 organs = li.xpath('sup/span/meta[@itemprop="address"]/@content')
-                organs = [re.sub('[ 0-9,]*grid[^,]*,', '', o).strip() for o in organs]
+                organs = [re.sub('^.*?grid[^,]*,', '', o, count=1).strip() for o in organs]
                 ca_og.append(ca[0] + ': ' + '//'.join(organs))
         if not ca_og:
             ca_og = [i for i in tree.xpath(

@@ -32,7 +32,7 @@ class Mysql(object):
     def get_field_name(self, table_name) -> []:
         sql = "select COLUMN_NAME from information_schema.COLUMNS where table_name = '{}'".format(table_name)
         self.commit(sql)
-        return [tp[0] for tp in self.fetchall()].remove('索引')
+        return [tp[0] for tp in self.fetchall()][1:]
 
     def create_table(self, table_name, field_name_list, type_list, primary_key=None):
         sqlhead = "CREATE TABLE IF NOT EXISTS `{}`(".format(table_name)

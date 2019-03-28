@@ -18,6 +18,7 @@ class Net(object):
         self.__driver = None
         self.response = None
         self.__ip = self.get_proxy()
+        self.proxy = False
         # print(self.__ip.__next__())
         self.post_headers = self.parse_form(post_headers, sep=":") if post_headers else False
         self.get_headers = self.parse_form(get_headers, sep=":") if get_headers else False
@@ -51,24 +52,26 @@ class Net(object):
                 while True:
                     yield(newip.__next__())
 
-    def requests(self, *args, method="post", timeout=20, proxies=False, **kwargs) -> html.HtmlElement:
+    def requests(self, *args, method="post", timeout=20, **kwargs) -> html.HtmlElement:
         """
         Same as requests.post, requests.get;
         *arg and **kwargs will be passed to requests.post or requests.get.
+        Please do not use argument proxies
         """
         time.sleep(2 + random.randint(1, 3))
         while True:
             try:
-                self.response = requests.post(*args, **kwargs, timeout=timeout, proxies=proxies) if method == "post" else requests.get(
-                    *args, **kwargs, timeout=timeout, proxies=proxies)
+                self.response = requests.post(*args, **kwargs, timeout=timeout, proxies=self.proxy) if method == "post" else requests.get(
+                    *args, **kwargs, timeout=timeout, proxies=self.proxy)
                 # self.write_reponse(response)
                 if self.response.status_code == 200:
                     return html.fromstring(self.response.text)
                 else:
-                    return self.requests(*args, method=method, timeout=timeout, proxies=self.__ip.__next__(), **kwargs)
+                    self.proxy = self.__ip.__next__()
+                    return self.requests(*args, method=method, timeout=timeout, **kwargs)
             except Exception as e:
-                print(e)
-                return self.requests(*args, method=method, timeout=timeout, proxies=self.__ip.__next__(), **kwargs)
+                self.proxy = self.__ip.__next__()
+                return self.requests(*args, method=method, timeout=timeout, **kwargs)
 
     def hrequests(self, *args, method="post", **kwargs):
         """
@@ -76,7 +79,8 @@ class Net(object):
         """
         return self.requests(*args, method="post", **kwargs, headers=self.post_headers) if method == "post" else self.requests(*args, method="get", **kwargs, headers=self.get_headers)
 
-    def parse_form(self, file, sep):
+    @staticmethod
+    def parse_form(file, sep):
         d = {}
         with open(file, "r", encoding="utf-8") as f:
             for line in f:
@@ -94,7 +98,8 @@ class Net(object):
         with open("current_response_html.html", encoding="utf-8", mode="w") as rf:
             rf.write(self.response.text)
 
-    def get_file_column(self, path, number=2, sep="\t") -> np.array:
+    @staticmethod
+    def get_file_column(path, number=2, sep="\t") -> np.array:
         """
         number: number of columns to get, if -1, all colmns will be fetched,
                 or use [] to specify specific column
@@ -107,17 +112,20 @@ class Net(object):
             out = data if number == -1 else data.iloc[:, 0:number]
         return out.applymap(lambda x: str(x).strip()).values
 
-    def array_in(self, record, array):
+    @staticmethod
+    def array_in(record, array):
         for e in array:
             if list(e) == list(record):
                 return True
         return False
 
-    def find_email(self, string) -> str:
-        found = re.search('[a-zA-Z0-9_\-\+.．]+@[a-zA-Z0-9_\-\+.．]+', string)
-        return found.group() if found else ""
+    @staticmethod
+    def find_email(string) -> str:
+        found = re.search('[a-zA-Z0-9_\-\+.．—]+@[a-zA-Z0-9_\-\+.．—]+', string)
+        return found.group().strip('.|．') if found else ""
 
-    def find_name(self, string, refer) -> str:
+    @staticmethod
+    def find_name(string, refer) -> str:
         for n in refer:
             if not string.find(n) == -1:
                 return n
