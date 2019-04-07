@@ -70,6 +70,7 @@ class Net(object):
                     self.proxy = self.__ip.__next__()
                     return self.requests(*args, method=method, timeout=timeout, **kwargs)
             except Exception as e:
+                print(e)
                 self.proxy = self.__ip.__next__()
                 return self.requests(*args, method=method, timeout=timeout, **kwargs)
 

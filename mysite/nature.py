@@ -10,7 +10,7 @@ class Nature(Journal):
         tree = self.net.requests(self.url, method="get")
         ids = tree.xpath('//a/@href')
         a = ['https://www.nature.com' + i for i in ids if i.startswith('/articles')]
-        b = [i for i in ids if i.startswith('https://www.nature.com/articles')]
+        b = [i for i in ids if re.search('https?://www.nature.com/articles',i)]
         return a + b
 
     def get_paper_info(self, paper_url: str):

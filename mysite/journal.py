@@ -16,7 +16,8 @@ class Journal(metaclass=ABCMeta):
         self.IF = self.journals_info[journal_name]['IF']
         self.if_ordered = self.journals_info[journal_name]['if_ordered']
         self.journal_name = journal_name
-        self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
+        # self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
+        self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
         self.net = Net(protocol=re.sub(':.+', '', self.url).strip())
         self.translator = Translator()
 

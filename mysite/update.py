@@ -4,7 +4,7 @@ import threading
 
 np = Nature('NATURE')
 global nature_journals
-nature_journals = [i for i in np.journals_info.keys() if not(i.find('NATURE') == -1 and i.find('Nature') == -1)]
+nature_journals = [i for i in np.journals_info.keys() if not np.journals_info[i]['url'].find('www.nature.com') == -1]
 
 
 def update(time_wait):
