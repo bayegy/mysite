@@ -10,8 +10,8 @@ class Nature(Journal):
         tree = self.net.requests(self.url, method="get")
         ids = tree.xpath('//a/@href')
         a = ['https://www.nature.com' + i for i in ids if i.startswith('/articles')]
-        b = [i for i in ids if re.search('https?://www.nature.com/articles',i)]
-        return a + b
+        b = [i for i in ids if re.search('https?://www\.nature\.com/articles', i)]
+        return list(set(a + b))
 
     def get_paper_info(self, paper_url: str):
         tree = self.net.requests(paper_url, method="get")
@@ -24,7 +24,7 @@ class Nature(Journal):
                 '日', '').replace('年', '-').replace('月', '-') if date else ""
 
         title = tree.xpath('//h1/text()')
-        title = title[0] if title else ""
+        title = ''.join(title).strip() if title else ""
 
         paper_type = tree.xpath('//p[@data-test="article-identifier"]/text()')
         if paper_type:

@@ -16,8 +16,8 @@ class Journal(metaclass=ABCMeta):
         self.IF = self.journals_info[journal_name]['IF']
         self.if_ordered = self.journals_info[journal_name]['if_ordered']
         self.journal_name = journal_name
-        # self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
-        self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
+        self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
+        # self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
         self.net = Net(protocol=re.sub(':.+', '', self.url).strip())
         self.translator = Translator()
 
@@ -39,6 +39,8 @@ class Journal(metaclass=ABCMeta):
         done_urls = self.db.select("tb_papers", field="文献网址").values
         for url in paper_urls:
             if url not in done_urls:
-                full_info = self.get_full_paper_info(url)
-                if full_info[1]:
-                    self.db.insert("tb_papers", full_info)
+                try:
+                    self.db.insert("tb_papers", self.get_full_paper_info(url))
+                except Exception as e:
+                    print(e)
+                    print("please check url: {}".format(url))

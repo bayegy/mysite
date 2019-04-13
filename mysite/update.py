@@ -1,38 +1,69 @@
 from nature import Nature
+from cell import Cell
 import time
 import threading
-
-np = Nature('NATURE')
-global nature_journals
-nature_journals = [i for i in np.journals_info.keys() if not np.journals_info[i]['url'].find('www.nature.com') == -1]
+from multiprocessing import Pool
+import json
 
 
-def update(time_wait):
-    global nature_journals
-    print("sleeping....")
-    time.sleep(time_wait)
-    while True:
-        start_time = time.time()
-        for jn in nature_journals:
-            print(jn)
-            try:
-                n = Nature(jn)
-                n.update_db_papers()
-                n.net.close()
-            except Exception as e:
-                print(e)
-                print(n.url)
-        end_time = time.time()
-        time_used = end_time - start_time
-        print("time used: {} min; time now: {}".format(str(time_used / 60),
-                                                       time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))))
+class Update(object):
+    """docstring for Update"""
 
-        print("sleeping....")
-        time.sleep(3600 * 24 - time_used)
+    def __init__(self):
+        with open('config/journal_info.conf', 'r', encoding='utf-8') as f:
+            self.journals_info = json.load(f)
+        nature_journals = [i for i in self.journals_info.keys() if not self.journals_info[i]
+                           ['url'].find('www.nature.com') == -1]
+        # cp = Cell("CELL")
+        cell_journals = [i for i in self.journals_info.keys() if not self.journals_info[i]
+                         ['url'].find('www.cell.com') == -1]
+
+        self.update_info = {
+            "NATURE": [Nature, nature_journals],
+            "CELL": [Cell, cell_journals]
+        }
+
+    def update(self, update_key, time_wait=0, tid=0):
+        print("{} updator{} is sleeping ({} min)....".format(update_key, tid, time_wait))
+        time.sleep(time_wait * 60)
+        print("{} updator{} start to loop update one time each day....".format(update_key, tid))
+        while True:
+            start_time = time.time()
+            for jn in self.update_info[update_key][1]:
+                print(jn)
+                try:
+                    n = self.update_info[update_key][0](jn)
+                    n.update_db_papers()
+                    n.net.close()
+                except Exception as e:
+                    print(e)
+                    print(n.url)
+            end_time = time.time()
+            time_used = end_time - start_time
+            print("{} updator{} done for today, time used: {} min; time now: {}".format(update_key, tid, str(time_used / 60),
+                                                                                        time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))))
+
+            print("{} updator{} is sleeping (one day)....".format(update_key, tid))
+            time.sleep(3600 * 24 - time_used)
+
+    def multi_thread_update(self, update_key, time_adjust=(0,)):
+        for n, t in enumerate(time_adjust):
+            td = threading.Thread(target=self.update, args=(update_key, t, n))
+            td.start()
+
+    def multi_process_update(self, time_adjust=(0,), cores=None):
+        keys = self.update_info.keys()
+
+        p = Pool(cores if cores else len(keys))
+        for key in keys:
+            p.apply_async(self.multi_thread_update, args=(key, time_adjust,))
 
 
-t1 = threading.Thread(target=update, args=(int(3.0833 * 3600),))
-t2 = threading.Thread(target=update, args=(int(10.0833 * 3600),))
-
-t1.start()
-t2.start()
+if __name__ == '__main__':
+    import sys
+    import re
+    ta = re.split(',', sys.argv[1])
+    ta = tuple([int(i) for i in ta])
+    u = Update()
+    print(ta)
+    u.multi_process_update(time_adjust=(235, 655))
