@@ -94,7 +94,5 @@ class Translator(object):
     def translate_date(self,date):
         dt = self.translate_paragraph(date).replace(
             '日', '').replace('年', '-').replace('月', '-').strip('-|,') if date else ""
-        dt = re.sub('^[^\d]+', '', dt)
-        dt = re.sub('[^\d]+$', '', dt)
-        dt = re.sub('^.+:|：','', dt)
-        return dt.strip()
+        dt = re.findall('\d{4}-\d{1,2}-\d{1,2}', dt)
+        return dt.pop() if dt else ""
