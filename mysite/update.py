@@ -1,5 +1,5 @@
-from nature import Nature
-from cell import Cell
+from journals.nature import Nature
+from journals.cell import Cell
 import time
 import threading
 from multiprocessing import Pool
@@ -59,11 +59,24 @@ class Update(object):
             p.apply_async(self.multi_thread_update, args=(key, time_adjust,))
 
 
+    def multi_process_update_wild(self, time_adjust=(0,), cores=None):
+        """
+        This method is weird, but it works for script.
+        """
+        keys = list(self.update_info.keys())
+        key0=keys[0]
+        del keys[0]
+        self.multi_thread_update(key0,time_adjust)
+        p = Pool(cores if cores else len(keys))
+        for key in keys:
+            p.apply_async(self.multi_thread_update, args=(key, time_adjust,))
+
+
 if __name__ == '__main__':
     import sys
     import re
     ta = re.split(',', sys.argv[1])
     ta = tuple([int(i) for i in ta])
     u = Update()
-    print(ta)
-    u.multi_process_update(time_adjust=(235, 655))
+    u.multi_process_update_wild(ta)
+

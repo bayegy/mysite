@@ -1,5 +1,5 @@
 from lxml import html
-from journal import Journal
+from journals.journal import Journal
 import re
 
 
@@ -20,8 +20,7 @@ class Nature(Journal):
             date = date[0]
         else:
             date = tree.xpath('//time[@itemprop="datePublished"]/text()')
-            date = self.translator.translate(date[0].strip()).replace(
-                '日', '').replace('年', '-').replace('月', '-') if date else ""
+            date = self.translator.translate_date(date[0])
 
         title = tree.xpath('//h1/text()')
         title = ''.join(title).strip() if title else ""

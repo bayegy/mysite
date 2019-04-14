@@ -1,5 +1,5 @@
 from lxml import html
-from journal import Journal
+from journals.journal import Journal
 import re
 
 
@@ -17,9 +17,18 @@ class Cell(Journal):
 
     def get_paper_info(self, paper_url: str):
         tree = self.net.requests(paper_url, method="get")
+
         date = tree.xpath('//span[@class="article-header__publish-date__value"]/text()')
-        date = self.translator.translate(re.sub('Published:?', '', date[0]).strip()).replace(
-            '日', '').replace('年', '-').replace('月', '-') if date else ""
+        if date:
+            date = date[0]
+        else:
+            date = tree.xpath('//div[@class="article-info__date"]/text()')
+            date= date[0]  if date else ""
+
+
+        date = date.replace('online','').replace('Published','').replace(':','').replace('：','')
+
+        date = self.translator.translate_date(date) if date else ""
 
         title = tree.xpath('//h1/text()')
         title = ''.join(title).strip() if title else ""

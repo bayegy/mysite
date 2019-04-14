@@ -4,7 +4,7 @@
 # from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from django.shortcuts import render
-from . import mysql
+from myutils.mysql import Mysql
 import os
 import re
 # 表单
@@ -28,7 +28,7 @@ def search(request):
     # user_id = request.session.get('_auth_user_id')
     store_file_name = BASE_DIR + '/static/' + 'search_result_table.txt'
 
-    db = mysql.Mysql("localhost", "root", "947366", "wstdb_academic")
+    db = Mysql("localhost", "root", "947366", "wstdb_academic")
     request.encoding = 'utf-8'
 
     input_word = request.GET['q'].strip().replace('：', ':')

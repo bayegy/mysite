@@ -1,23 +1,25 @@
-from net import Net
-from translator import Translator
+from myutils.net import Net
+from myutils.translator import Translator
 import re
+import os
 from abc import abstractmethod, ABCMeta
 import json
-from mysql import Mysql
+from myutils.mysql import Mysql
 
 
 class Journal(metaclass=ABCMeta):
     """docstring for Journal"""
 
     def __init__(self, journal_name):
-        with open('config/journal_info.conf', 'r', encoding='utf-8') as f:
+        self._base= os.path.dirname(os.path.dirname(__file__))
+        with open(self._base+'/config/journal_info.conf', 'r', encoding='utf-8') as f:
             self.journals_info = json.load(f)
         self.url = self.journals_info[journal_name]['url']
         self.IF = self.journals_info[journal_name]['IF']
         self.if_ordered = self.journals_info[journal_name]['if_ordered']
         self.journal_name = journal_name
-        self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
-        # self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
+        # self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
+        self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
         self.net = Net(protocol=re.sub(':.+', '', self.url).strip())
         self.translator = Translator()
 
@@ -31,7 +33,7 @@ class Journal(metaclass=ABCMeta):
 
     def get_full_paper_info(self, paper_url: str) ->[]:
         date, title, paper_type, authors, ca_organs = self.get_paper_info(paper_url)
-        translated_title = self.translator.translate(title) if title else ""
+        translated_title = self.translator.translate_paragraph(title) if title else ""
         return [date, title, translated_title, paper_type, authors, ca_organs, self.journal_name, self.IF, self.if_ordered, paper_url]
 
     def update_db_papers(self):
@@ -40,7 +42,9 @@ class Journal(metaclass=ABCMeta):
         for url in paper_urls:
             if url not in done_urls:
                 try:
-                    self.db.insert("tb_papers", self.get_full_paper_info(url))
+                    paper_info = self.get_full_paper_info(url)
+                    print('日期：{}, 标题：{}'.format(paper_info[0], paper_info[2]))
+                    self.db.insert("tb_papers", paper_info)
                 except Exception as e:
                     print(e)
                     print("please check url: {}".format(url))

@@ -52,7 +52,7 @@ class Net(object):
                 while True:
                     yield(newip.__next__())
 
-    def requests(self, *args, method="post", timeout=20, **kwargs) -> html.HtmlElement:
+    def requests(self, *args, method="post", timeout=20, return_tree=True,**kwargs) -> html.HtmlElement:
         """
         Same as requests.post, requests.get;
         *arg and **kwargs will be passed to requests.post or requests.get.
@@ -65,14 +65,14 @@ class Net(object):
                     *args, **kwargs, timeout=timeout, proxies=self.proxy)
                 # self.write_reponse(response)
                 if self.response.status_code == 200:
-                    return html.fromstring(self.response.text)
+                    return html.fromstring(self.response.text) if return_tree else self.response.text
                 else:
                     self.proxy = self.__ip.__next__()
-                    return self.requests(*args, method=method, timeout=timeout, **kwargs)
+                    return self.requests(*args, method=method, timeout=timeout,return_tree=return_tree, **kwargs)
             except Exception as e:
                 print(e)
                 self.proxy = self.__ip.__next__()
-                return self.requests(*args, method=method, timeout=timeout, **kwargs)
+                return self.requests(*args, method=method, timeout=timeout,return_tree=return_tree, **kwargs)
 
     def hrequests(self, *args, method="post", **kwargs):
         """
@@ -81,7 +81,7 @@ class Net(object):
         return self.requests(*args, method="post", **kwargs, headers=self.post_headers) if method == "post" else self.requests(*args, method="get", **kwargs, headers=self.get_headers)
 
     @staticmethod
-    def parse_form(file, sep):
+    def parse_form(file, sep=":"):
         d = {}
         with open(file, "r", encoding="utf-8") as f:
             for line in f:
