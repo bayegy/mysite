@@ -11,8 +11,8 @@ class Journal(metaclass=ABCMeta):
     """docstring for Journal"""
 
     def __init__(self, journal_name):
-        self._base= os.path.dirname(os.path.dirname(__file__))
-        with open(self._base+'/config/journal_info.conf', 'r', encoding='utf-8') as f:
+        self._base = os.path.dirname(os.path.dirname(__file__))
+        with open(self._base + '/config/journal_info.conf', 'r', encoding='utf-8') as f:
             self.journals_info = json.load(f)
         self.url = self.journals_info[journal_name]['url']
         self.IF = self.journals_info[journal_name]['IF']

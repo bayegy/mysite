@@ -23,10 +23,9 @@ class Cell(Journal):
             date = date[0]
         else:
             date = tree.xpath('//div[@class="article-info__date"]/text()')
-            date= date[0]  if date else ""
+            date = date[0] if date else ""
 
-
-        date = date.replace('online','').replace('Published','').replace(':','').replace('：','')
+        date = date.replace('online', '').replace('Published', '').replace(':', '').replace('：', '')
 
         date = self.translator.translate_date(date) if date else ""
 
