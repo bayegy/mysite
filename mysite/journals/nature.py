@@ -7,14 +7,14 @@ class Nature(Journal):
     """docstring for Nature"""
 
     def get_papers_url(self):
-        tree = self.net.requests(self.url, method="get")
+        tree = self.net.lrequests(self.url, method="get")
         ids = tree.xpath('//a/@href')
         a = ['https://www.nature.com' + i for i in ids if i.startswith('/articles')]
         b = [i for i in ids if re.search('https?://www\.nature\.com/articles', i)]
         return list(set(a + b))
 
     def get_paper_info(self, paper_url: str):
-        tree = self.net.requests(paper_url, method="get")
+        tree = self.net.lrequests(paper_url, method="get")
         date = tree.xpath('//time[@itemprop="datePublished"]/@datetime')
         if date:
             date = date[0]

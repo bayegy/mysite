@@ -9,14 +9,14 @@ class Cell(Journal):
     """
 
     def get_papers_url(self):
-        tree = self.net.requests(self.url, method="get")
+        tree = self.net.lrequests(self.url, method="get")
         ids = tree.xpath('//a/@href')
         a = ['https://www.cell.com' + i for i in ids if re.search('^/.*fulltext', i)]
         b = [i for i in ids if re.search('https?://www\.cell\.com.*fulltext', i)]
         return list(set(a + b))
 
     def get_paper_info(self, paper_url: str):
-        tree = self.net.requests(paper_url, method="get")
+        tree = self.net.lrequests(paper_url, method="get")
 
         date = tree.xpath('//span[@class="article-header__publish-date__value"]/text()')
         if date:
