@@ -30,6 +30,8 @@ class Net(object):
             try:
                 self.__driver.get('http://www.goubanjia.com/')
                 res = self.__driver.page_source
+                with open('get_proxy_log.html', 'w') as f:
+                    f.write(res)
                 tree = html.fromstring(res)
                 ipnode = tree.xpath("//td[@class='ip']")
                 ips = []
@@ -52,7 +54,7 @@ class Net(object):
                 while True:
                     yield(newip.__next__())
 
-    def requests(self, *args, method="post", timeout=20, return_tree=True,**kwargs) -> html.HtmlElement:
+    def requests(self, *args, method="post", timeout=20, return_tree=True, **kwargs) -> html.HtmlElement:
         """
         Same as requests.post, requests.get;
         *arg and **kwargs will be passed to requests.post or requests.get.
@@ -68,11 +70,11 @@ class Net(object):
                     return html.fromstring(self.response.text) if return_tree else self.response.text
                 else:
                     self.proxy = self.__ip.__next__()
-                    return self.requests(*args, method=method, timeout=timeout,return_tree=return_tree, **kwargs)
+                    return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
             except Exception as e:
                 print(e)
                 self.proxy = self.__ip.__next__()
-                return self.requests(*args, method=method, timeout=timeout,return_tree=return_tree, **kwargs)
+                return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
 
     def hrequests(self, *args, method="post", **kwargs):
         """

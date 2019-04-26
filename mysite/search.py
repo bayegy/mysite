@@ -27,7 +27,7 @@ def search(request):
     global BASE_DIR
     # user_id = request.session.get('_auth_user_id')
     store_file_name = BASE_DIR + '/static/' + 'search_result_table.txt'
-
+    print("Test at search:")
     db = Mysql("localhost", "root", "947366", "wstdb_academic")
     request.encoding = 'utf-8'
 
@@ -38,12 +38,15 @@ def search(request):
         input_word = re.split(':', input_word)
         condition = "发表日期>='{}' and 发表日期<='{}'".format(input_word[0].strip(), input_word[1].strip())
     try:
+        # print(condition)
         df = db.select("tb_papers", condition=condition)
+        # print(df)
         del df["索引"]
         df.to_csv(store_file_name, encoding='utf-8', sep='\t')
         df['文献网址'] = form_a(df['文献网址'])
         df = df.to_html(escape=False)
     except Exception as e:
+        print(e)
         df = '<p>查询结果为空</p>'
 
     context = {}
