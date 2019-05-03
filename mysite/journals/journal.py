@@ -10,7 +10,7 @@ from myutils.mysql import Mysql
 class Journal(metaclass=ABCMeta):
     """docstring for Journal"""
 
-    def __init__(self, journal_name):
+    def __init__(self, journal_name, net=False):
         self._base = os.path.dirname(os.path.dirname(__file__))
         with open(self._base + '/config/journal_info.conf', 'r', encoding='utf-8') as f:
             self.journals_info = json.load(f)
@@ -20,7 +20,7 @@ class Journal(metaclass=ABCMeta):
         self.journal_name = journal_name
         # self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
         self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
-        self.net = Net(protocol=re.sub(':.+', '', self.url).strip())
+        self.net = net if net else Net(protocol=re.sub(':.+', '', self.url).strip())
         self.translator = Translator()
 
     @abstractmethod

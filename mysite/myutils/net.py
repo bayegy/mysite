@@ -13,24 +13,24 @@ class Net(object):
     post_headers, get_headers: file path of headers, key and value should be seprated by ':'
     """
 
-    def __init__(self, protocol='http', post_headers=False, get_headers=False):
+    def __init__(self, protocol='http', post_headers=False, get_headers=False, driver=False, proxies=False):
         self.protocol = protocol
-        self.__driver = None
+        self.pre_driver = driver
         self.response = None
-        self.__ip = self.get_proxy()
+        self.proxies = proxies if proxies else self.get_proxy()
         self.proxy = False
-        # print(self.__ip.__next__())
+        # print(self.proxies.__next__())
         self.post_headers = self.parse_form(post_headers, sep=":") if post_headers else False
         self.get_headers = self.parse_form(get_headers, sep=":") if get_headers else False
 
     def get_proxy(self):
-        self.__driver = self.fox_driver()
-        print("Fox driver have been activated, use close method to close it")
+        self.driver = self.pre_driver if self.pre_driver else self.fox_driver()
+        # print("Fox driver have been activated, use close method to close it")
         while True:
             time.sleep(2 + random.randint(1, 3))
             try:
-                self.__driver.get('http://www.goubanjia.com/')
-                res = self.__driver.page_source
+                self.driver.get('http://www.goubanjia.com/')
+                res = self.driver.page_source
                 tree = html.fromstring(res)
                 rows = tree.xpath('//tbody/tr')
                 for row in rows:
@@ -43,14 +43,15 @@ class Net(object):
                         if protocol == self.protocol and degree == '高匿':
                             yield dict([(protocol, "{}://{}".format(protocol, ip))])
                     except Exception as e:
-                        print(e)
-                        continue
+                        print(str(e) + '\n ignore it...')
+                        # continue
             except Exception as e:
-                print(e)
-                self.__driver.close()
-                newip = self.get_proxy()  # 初始化生成器
-                while True:
-                    yield(newip.__next__())
+                print(str(e) + '\n tring again...')
+                # continue
+                # self.driver.close()
+                # newip = self.get_proxy()  # 初始化生成器
+                # while True:
+                #     yield(newip.__next__())
 
     def requests(self, *args, method="post", timeout=20, return_tree=True, **kwargs) -> html.HtmlElement:
         """
@@ -67,11 +68,11 @@ class Net(object):
                 if self.response.status_code == 200:
                     return html.fromstring(self.response.text) if return_tree else self.response.text
                 else:
-                    self.proxy = self.__ip.__next__()
+                    self.proxy = self.proxies.__next__()
                     return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
             except Exception as e:
                 print(e)
-                self.proxy = self.__ip.__next__()
+                self.proxy = self.proxies.__next__()
                 return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
 
     def lrequests(self, *args, method="post", timeout=20, return_tree=True, **kwargs) -> html.HtmlElement:
@@ -88,12 +89,12 @@ class Net(object):
                 if self.response.status_code == 200:
                     return html.fromstring(self.response.text) if return_tree else self.response.text
                 else:
-                    # self.proxy = self.__ip.__next__()
+                    # self.proxy = self.proxies.__next__()
                     return self.lrequests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
             except Exception as e:
                 print(e)
-                # self.proxy = self.__ip.__next__()
-                return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
+                # self.proxy = self.proxies.__next__()
+                return self.lrequests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
 
     def hrequests(self, *args, method="post", **kwargs):
         """
@@ -155,6 +156,6 @@ class Net(object):
 
     def close(self):
         try:
-            self.__driver.close()
+            self.driver.close()
         except Exception:
             pass
