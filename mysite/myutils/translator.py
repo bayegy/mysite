@@ -87,8 +87,12 @@ class Translator(object):
         p = s.post(url, data=data, headers=head)
         js = json.loads(p.text)
         # breakpoint()
-        res = [d["tgt"] for d in js["translateResult"][0]]
-        return ''.join(res)
+        try:
+            res = [d["tgt"] for d in js["translateResult"][0]]
+            return ''.join(res)
+        except IndexError:
+            return ""
+
 
     def translate_date(self, date):
         dt = self.translate_paragraph(date).replace(

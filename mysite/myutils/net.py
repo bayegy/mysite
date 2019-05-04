@@ -66,7 +66,8 @@ class Net(object):
                     *args, **kwargs, timeout=timeout, proxies=self.proxy)
                 # self.write_reponse(response)
                 if self.response.status_code == 200:
-                    return html.fromstring(self.response.text) if return_tree else self.response.text
+                    # breakpoint()
+                    return html.fromstring(self.response.content) if return_tree else self.response.text
                 else:
                     self.proxy = self.proxies.__next__()
                     return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
@@ -87,7 +88,7 @@ class Net(object):
                     *args, **kwargs, timeout=timeout)
                 # self.write_reponse(response)
                 if self.response.status_code == 200:
-                    return html.fromstring(self.response.text) if return_tree else self.response.text
+                    return html.fromstring(self.response.content) if return_tree else self.response.text
                 else:
                     # self.proxy = self.proxies.__next__()
                     return self.lrequests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)

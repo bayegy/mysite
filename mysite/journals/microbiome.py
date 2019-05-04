@@ -5,10 +5,12 @@ import re
 
 class Microbiome(Journal):
     """None"""
+    def __init__(self):
+        super(Microbiome, self).__init__("Microbiome")
 
     def get_papers_url(self):
         tree = self.net.lrequests(self.url, method="get")
-        ids = tree.xpath('//a/@href')
+        ids = tree.xpath('//a[@data-test="title-link"]/@href')
         a = ['https://microbiomejournal.biomedcentral.com' + i for i in ids if re.search('^/articles', i)]
         b = [i for i in ids if re.search('^https://microbiomejournal.biomedcentral.com/articles', i)]
         return list(set(a + b))
