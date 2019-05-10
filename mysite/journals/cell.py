@@ -8,6 +8,9 @@ class Cell(Journal):
     class to get the paper information of Cell related journals
     """
 
+    def __init__(self, journal_name=False, net=False):
+        super(Cell, self).__init__(journal_name or "CELL", net)
+
     def get_papers_url(self):
         tree = self.net.lrequests(self.url, method="get")
         ids = tree.xpath('//a/@href')

@@ -5,6 +5,7 @@ import os
 from abc import abstractmethod, ABCMeta
 import json
 from myutils.mysql import Mysql
+import pdb
 
 
 class Journal(metaclass=ABCMeta):
@@ -20,8 +21,11 @@ class Journal(metaclass=ABCMeta):
         self.journal_name = journal_name
         # self.db = Mysql("localhost", "root", "947366", "wstdb_academic")
         self.db = Mysql("192.168.196.134", "admin1", "123456", "wstdb_academic")
-        self.net = net if net else Net(protocol=re.sub(':.+', '', self.url).strip())
+        self.net = net or Net(protocol=re.sub(':.+', '', self.url).strip())
         self.translator = Translator()
+        self.host = re.search('://([^/]+)', self.url).group(1)
+        self.siblings = [i for i in self.journals_info.keys() if not self.journals_info[i]
+                         ['url'].find(self.host) == -1]
 
     @abstractmethod
     def get_papers_url(self) ->[]:
@@ -37,14 +41,29 @@ class Journal(metaclass=ABCMeta):
         return [date, title, translated_title, paper_type, authors, ca_organs, self.journal_name, self.IF, self.if_ordered, paper_url]
 
     def update_db_papers(self):
-        paper_urls = self.get_papers_url()
-        done_urls = self.db.select("tb_papers", field="文献网址").values
-        for url in paper_urls:
-            if url not in done_urls:
-                try:
-                    paper_info = self.get_full_paper_info(url)
-                    print('日期：{}, 标题：{}'.format(paper_info[0], paper_info[2]))
-                    self.db.insert("tb_papers", paper_info)
-                except Exception as e:
-                    print(e)
-                    print("please check url: {}".format(url))
+        try:
+            paper_urls = self.get_papers_url()
+            done_urls = self.db.select("tb_papers", field="文献网址").values
+            for url in paper_urls:
+                if url not in done_urls:
+                    try:
+                        paper_info = self.get_full_paper_info(url)
+                        print('日期：{}, 标题：{}'.format(paper_info[0], paper_info[2]))
+                        self.db.insert("tb_papers", paper_info)
+                    except Exception as e:
+                        print(e)
+                        print("Check paper url: {}".format(url))
+        except Exception as e:
+            print(e)
+            print("Please check journal url: {}, journal name: {}".format(self.url, self.journal_name))
+
+    def update_siblings_db_papers(self, child_class):
+        """Can this method be implemented in father class? I don't known yet"""
+        for sibling in self.siblings:
+            try:
+                print("Updating " + sibling)
+                # pdb.set_trace()
+                child_class(sibling, self.net).update_db_papers()
+            except Exception as e:
+                print(e)
+                print('Error happend at: ' + sibling)

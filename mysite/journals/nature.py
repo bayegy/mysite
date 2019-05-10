@@ -6,6 +6,9 @@ import re
 class Nature(Journal):
     """docstring for Nature"""
 
+    def __init__(self, journal_name=False, net=False):
+        super(Nature, self).__init__(journal_name or "NATURE", net)
+
     def get_papers_url(self):
         tree = self.net.lrequests(self.url, method="get")
         ids = tree.xpath('//a/@href')

@@ -10,21 +10,26 @@ import pandas as pd
 
 class Net(object):
     """
-    post_headers, get_headers: file path of headers, key and value should be seprated by ':'
+    This class is synchronized
+
+    arguments:
+        post_headers, get_headers: file path of headers, key and value should be seprated by ':'
+
     """
 
     def __init__(self, protocol='http', post_headers=False, get_headers=False, driver=False, proxies=False):
         self.protocol = protocol
         self.pre_driver = driver
-        self.response = None
-        self.proxies = proxies if proxies else self.get_proxy()
+        # response = None
+        self.proxies = proxies or self.get_proxy()
         self.proxy = False
+        # self.tried_times = 0
         # print(self.proxies.__next__())
         self.post_headers = self.parse_form(post_headers, sep=":") if post_headers else False
         self.get_headers = self.parse_form(get_headers, sep=":") if get_headers else False
 
     def get_proxy(self):
-        self.driver = self.pre_driver if self.pre_driver else self.fox_driver()
+        self.driver = self.pre_driver or self.fox_driver()
         # print("Fox driver have been activated, use close method to close it")
         while True:
             time.sleep(2 + random.randint(1, 3))
@@ -62,19 +67,15 @@ class Net(object):
         time.sleep(2 + random.randint(1, 3))
         while True:
             try:
-                self.response = requests.post(*args, **kwargs, timeout=timeout, proxies=self.proxy) if method == "post" else requests.get(
+                response = requests.post(*args, **kwargs, timeout=timeout, proxies=self.proxy) if method == "post" else requests.get(
                     *args, **kwargs, timeout=timeout, proxies=self.proxy)
                 # self.write_reponse(response)
-                if self.response.status_code == 200:
+                if response.status_code == 200:
                     # breakpoint()
-                    return html.fromstring(self.response.content) if return_tree else self.response.text
-                else:
-                    self.proxy = self.proxies.__next__()
-                    return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
+                    return html.fromstring(response.content) if return_tree else response.text
             except Exception as e:
                 print(e)
                 self.proxy = self.proxies.__next__()
-                return self.requests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
 
     def lrequests(self, *args, method="post", timeout=20, return_tree=True, **kwargs) -> html.HtmlElement:
         """
@@ -82,20 +83,19 @@ class Net(object):
         *arg and **kwargs will be passed to requests.post or requests.get.
         """
         time.sleep(2 + random.randint(1, 3))
-        while True:
+        tried_times = 0
+        while tried_times < 6:
             try:
-                self.response = requests.post(*args, **kwargs, timeout=timeout) if method == "post" else requests.get(
+                response = requests.post(*args, **kwargs, timeout=timeout) if method == "post" else requests.get(
                     *args, **kwargs, timeout=timeout)
                 # self.write_reponse(response)
-                if self.response.status_code == 200:
-                    return html.fromstring(self.response.content) if return_tree else self.response.text
-                else:
-                    # self.proxy = self.proxies.__next__()
-                    return self.lrequests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
+                if response.status_code == 200:
+                    return html.fromstring(response.content) if return_tree else response.text
             except Exception as e:
                 print(e)
-                # self.proxy = self.proxies.__next__()
-                return self.lrequests(*args, method=method, timeout=timeout, return_tree=return_tree, **kwargs)
+            tried_times += 1
+        raise RuntimeError(
+            "Exceed max retry times, arguments used: {}, key word arguments used: {}".format(str(args), str(kwargs)))
 
     def hrequests(self, *args, method="post", **kwargs):
         """
@@ -117,10 +117,6 @@ class Net(object):
         option = webdriver.FirefoxOptions()
         option.set_headless()
         return webdriver.Firefox(firefox_options=option)
-
-    def write_reponse(self):
-        with open("current_response_html.html", encoding="utf-8", mode="w") as rf:
-            rf.write(self.response.text)
 
     @staticmethod
     def get_file_column(path, number=2, sep="\t") -> np.array:

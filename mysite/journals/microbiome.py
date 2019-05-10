@@ -5,8 +5,9 @@ import re
 
 class Microbiome(Journal):
     """None"""
-    def __init__(self):
-        super(Microbiome, self).__init__("Microbiome")
+
+    def __init__(self, journal_name=False, net=False):
+        super(Microbiome, self).__init__(journal_name or "Microbiome", net)
 
     def get_papers_url(self):
         tree = self.net.lrequests(self.url, method="get")
@@ -21,7 +22,6 @@ class Microbiome(Journal):
         title = tree.xpath('//h1/text()')
         title = ''.join(title).strip() if title else ""
 
-        
         date = tree.xpath('//span[@itemprop="datePublished"]/text()')
         if date:
             date = " ".join(date[0].split())
@@ -29,8 +29,8 @@ class Microbiome(Journal):
         else:
             date = ""
 
-        organ_dict={}
-        organ_nodes=tree.xpath('//div[@class="Affiliation"]')
+        organ_dict = {}
+        organ_nodes = tree.xpath('//div[@class="Affiliation"]')
         for node in organ_nodes:
             id = node.xpath('@id')
             id = id[0] if id else ""
@@ -38,14 +38,14 @@ class Microbiome(Journal):
             organ = organ[0] if organ else ""
             # breakpoint()
             if id:
-                organ_dict[id.replace('#', '').strip()]=organ
+                organ_dict[id.replace('#', '').strip()] = organ
 
-        authors=[]
-        ca_organs=[]
-        authors_nodes=tree.xpath('//li[@class="Author hasAffil"]')
+        authors = []
+        ca_organs = []
+        authors_nodes = tree.xpath('//li[@class="Author hasAffil"]')
         for node in authors_nodes:
             author = node.xpath('span[@class="AuthorName"]/text()')
-            author = " ".join(author[0].split())  if author else ""
+            author = " ".join(author[0].split()) if author else ""
             authors.append(author)
             if node.xpath('a[@class="EmailAuthor"]'):
                 ids = node.xpath('sup/a[@class="AffiliationID"]/@href')
@@ -60,9 +60,6 @@ class Microbiome(Journal):
         ca_organs = [" ".join(organ.split()) for organ in ca_organs if organ]
         ca_organs = '; '.join(ca_organs)
 
-        paper_type=tree.xpath('//li[@data-test="article-category"]/text()')
+        paper_type = tree.xpath('//li[@data-test="article-category"]/text()')
         paper_type = paper_type[0] if paper_type else ""
         return [date, title, paper_type, authors, ca_organs]
-
-
-
