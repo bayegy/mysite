@@ -2,6 +2,7 @@ from journals.nature import Nature
 from journals.cell import Cell
 from journals.gut import Gut
 from journals.microbiome import Microbiome
+from journals.science import Science
 import time
 import threading
 from multiprocessing import Pool
@@ -12,7 +13,7 @@ class Update(object):
     """docstring for Update"""
 
     def __init__(self, journal_tribes=False):
-        self.journal_tribes = journal_tribes or [[Nature], [Cell], [Gut, Microbiome]]
+        self.journal_tribes = journal_tribes or [[Nature], [Cell], [Gut, Microbiome, Science]]
 
     def update(self, journal_tribe, time_wait=0, tid=0):
         print("journal tribe {} updator{} is sleeping ({} min)....".format(str(journal_tribe), tid, time_wait))
