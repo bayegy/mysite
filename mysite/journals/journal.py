@@ -52,7 +52,7 @@ class Journal(metaclass=ABCMeta):
                         self.db.insert("tb_papers", paper_info)
                     except Exception as e:
                         print(e)
-                        print("Check paper url: {}".format(url))
+                        print("Please check paper url: {}".format(url))
         except Exception as e:
             print(e)
             print("Please check journal url: {}, journal name: {}".format(self.url, self.journal_name))

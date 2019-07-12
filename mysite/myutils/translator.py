@@ -81,18 +81,17 @@ class Translator(object):
             'typoResult': 'false'
         }
 
-        s = requests.session()
+        req = requests.session()
         # print data
         url = 'http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule'
-        p = s.post(url, data=data, headers=head)
-        js = json.loads(p.text)
+        resp = req.post(url, data=data, headers=head)
+        js = json.loads(resp.text)
         # breakpoint()
         try:
             res = [d["tgt"] for d in js["translateResult"][0]]
             return ''.join(res)
         except IndexError:
             return ""
-
 
     def translate_date(self, date):
         dt = self.translate_paragraph(date).replace(
