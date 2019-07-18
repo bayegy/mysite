@@ -83,10 +83,10 @@ class Translator(object):
 
         req = requests.session()
         # print data
-        url = 'http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule'
+        # url = 'http://fanyi.youdao.com/translate_o?smartresult=dict&smartresult=rule'
+        url = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule'
         resp = req.post(url, data=data, headers=head)
         js = json.loads(resp.text)
-        # breakpoint()
         try:
             res = [d["tgt"] for d in js["translateResult"][0]]
             return ''.join(res)
